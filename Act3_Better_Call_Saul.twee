@@ -1,0 +1,419 @@
+:: StoryTitle
+Better Call Saul
+
+
+:: StoryData
+{
+  "ifid": "B8D3E5F9-4A02-5C76-0B83-6F9E0A2B3C4D",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "office morning",
+  "zoom": 1
+}
+
+
+:: office morning {"position":"700,400","size":"100,100"}
+The strip mall is dead at this hour.
+(click: ?page)[==
+You unlock the front door of Saul Goodman and Associates (there are no associates) and flip on the lights and the Statue of Liberty inflatable on the roof hisses to life through the ceiling.
+(click: ?page)[==
+Constitutional coffee. That's what you call it. You brew a pot.
+(click: ?page)[==
+You are James Morgan McGill, better known as Saul Goodman, attorney at law, age undisclosed, height whatever the shoes say, and the only lawyer in New Mexico with two clients currently holding approximately eleven million dollars in unaccounted cash.
+(click: ?page)[==
+One of those clients is going to call today.
+(click: ?page)[==
+You can feel it the way old men feel weather.
+
+[[Check the burner]]
+
+
+:: Check the burner {"position":"700,525","size":"100,100"}
+You pull open the desk drawer.
+(click: ?page)[==
+The burner is blinking.
+(click: ?page)[==
+Three missed calls from the number you labeled ''HEISENBERG'' and two from the number you labeled ''KID''.
+(click: ?page)[==
+The coffee machine beeps. You ignore it.
+
+[[Call Heisenberg back]]
+[[Call the Kid back]]
+
+
+:: Call Heisenberg back {"position":"575,650","size":"100,100"}
+He picks up on the first ring.
+
+"Saul."
+
+"Walter, baby, talk to me, what's the crisis this fine morning — "
+
+"The girl is dead."
+
+(click: ?page)[==
+You set down your coffee.
+(click: ?page)[==
+"The girl. THE girl. Jane girl."
+
+"Yes."
+
+"How dead. Like, cops-are-there dead, or — "
+
+"Jesse is still in the apartment. She overdosed. Jesse doesn't know yet. He is still unconscious."
+
+(click: ?page)[==
+You look at the ceiling.
+(click: ?page)[==
+You take a breath.
+(click: ?page)[==
+This is the part of the job where you earn the retainer.
+
+[[Send in a cleaner]]
+
+
+:: Call the Kid back {"position":"825,650","size":"100,100"}
+It rings. It rings. It rings.
+(click: ?page)[==
+Voicemail.
+(click: ?page)[==
+"Jesse, sweetheart, it's your favorite lawyer. Call me back. Whatever it is, call me back before you call anyone else. That includes nine-one-one. ''Especially'' nine-one-one."
+(click: ?page)[==
+You hang up.
+(click: ?page)[==
+You call Heisenberg.
+
+[[Call Heisenberg back]]
+
+
+:: Send in a cleaner {"position":"700,775","size":"100,100"}
+"Walter. Listen to me. You are going to hang up this phone. You are going to go home. You are going to take a shower. You are going to kiss your wife. You are going to go to work tomorrow."
+(click: ?page)[==
+"I know a guy. He makes this kind of thing look like what it's supposed to look like. Junkie overdose. Sad story. Parents get a phone call. You and I were never there."
+(click: ?page)[==
+"Do you understand me."
+
+"...yes."
+
+"Good."
+
+You hang up.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/saul-office.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+[[Make the call to Mike]]
+
+
+:: Make the call to Mike {"position":"700,900","size":"100,100"}
+Mike picks up on the second ring.
+(click: ?page)[==
+You explain it in thirty seconds flat.
+(click: ?page)[==
+Mike does not say anything for five of those seconds.
+(click: ?page)[==
+"Address."
+
+You give him the address.
+
+"The kid in the apartment too?"
+
+"Yeah, he's out cold. Do not — Mike, do NOT — "
+
+"I'm not going to touch the kid, Saul."
+
+(click: ?page)[==
+You realize your hand is shaking on the receiver.
+(click: ?page)[==
+You did not think Mike would do that.
+(click: ?page)[==
+You had to ask.
+
+[[Hours pass]]
+
+
+:: Hours pass {"position":"700,1025","size":"100,100"}
+You don't leave the office.
+(click: ?page)[==
+You watch the Statue of Liberty through the window, inflating and deflating in the wind, and you think about how the thing about lawyers is that everyone thinks you get to pick your clients.
+(click: ?page)[==
+You don't.
+(click: ?page)[==
+The clients pick you, and then they pick you again, and then one day you look up and you are knee-deep in something and you realize that every door behind you has been quietly locked.
+(click: ?page)[==
+The burner rings.
+
+It's the Kid.
+
+[[Answer Jesse's call]]
+
+
+:: Answer Jesse's call {"position":"700,1150","size":"100,100"}
+He is crying so hard you cannot understand him for the first thirty seconds.
+(click: ?page)[==
+"Jesse. Jesse. Slow down. Slow down, kiddo."
+(click: ?page)[==
+"She's — she's — Saul, she's — "
+
+"I know."
+
+"What?"
+
+"I know, Jesse. I'm handling it. You need to not be there. There's a guy coming. He is going to take care of everything. You need to walk out that door and go to a motel and I will meet you there."
+
+(click: ?page)[==
+There is a long silence on the line.
+(click: ?page)[==
+"Did Mr. White — "
+
+"Jesse. Motel. Now."
+
+"...yeah."
+
+"Atta boy."
+
+You hang up.
+
+[[Drive to the motel]]
+
+
+:: Drive to the motel {"position":"700,1275","size":"100,100"}
+You take the Cadillac.
+(click: ?page)[==
+You pick a motel on the east side, one of the ones that charges by the week and doesn't ask questions.
+(click: ?page)[==
+Jesse is already in the room when you get there.
+(click: ?page)[==
+He is sitting on the edge of the bed with his hands clasped between his knees and he looks, for a second, like a kid who got sent to the principal's office.
+(click: ?page)[==
+Then you look at his face again and you see it is not that at all.
+(click: ?page)[==
+It is grief so raw that it has not found a shape yet.
+
+[[Sit down across from him]]
+
+
+:: Sit down across from him {"position":"700,1400","size":"100,100"}
+You pull up the one chair in the room.
+(click: ?page)[==
+You sit.
+(click: ?page)[==
+For a minute, neither of you says anything.
+(click: ?page)[==
+Then Jesse says, very quietly:
+
+"I think I killed her."
+
+(click: ?page)[==
+You study him.
+
+You have two options here.
+
+You can tell him what you suspect. That Walt was there. That Walt let her die, or Walt helped her die, or Walt at minimum did not stop what was happening.
+
+Or you can let him carry it.
+Let him believe it was his fault.
+It would be easier. For you. For the operation. For the retainer.
+
+[[Tell Jesse the truth]]
+[[Let Jesse believe it]]
+
+
+:: Let Jesse believe it {"position":"850,1525","size":"100,100"}
+"Kid. Listen to me."
+(click: ?page)[==
+"People die. Addicts die. This is — this is a sad thing, but it is not a you thing. You were both using. She rolled wrong. That is — statistically — that is what happens."
+(click: ?page)[==
+Jesse is nodding. He is not hearing you. He is hearing the permission in your voice.
+(click: ?page)[==
+Permission to hate himself.
+(click: ?page)[==
+You see it settle on him like a coat.
+
+[[Get him to rehab]]
+
+
+:: Get him to rehab {"position":"850,1650","size":"100,100"}
+"I know a place. Out past Los Lunas. They don't ask questions, they take cash, and they keep people clean for however long the money lasts."
+(click: ?page)[==
+"I'll drive you tomorrow."
+(click: ?page)[==
+He nods.
+(click: ?page)[==
+You leave him there.
+(click: ?page)[==
+In the parking lot you stand next to your car for a long time before you get in.
+(click: ?page)[==
+You did the professional thing.
+(click: ?page)[==
+You kept the client alive and kept the operation running and kept the retainer on the desk.
+(click: ?page)[==
+You also just watched a kid take the weight of something that wasn't his to carry, and you let him do it, because it was easier.
+
+[[Bad ending]]
+
+
+:: Tell Jesse the truth {"position":"550,1525","size":"100,100"}
+You open your mouth.
+(click: ?page)[==
+You close it.
+(click: ?page)[==
+You open it again.
+(click: ?page)[==
+"Jesse. Listen to me very carefully, because I am about to do something that violates approximately nine bar association rules and also my own rule number one, which is do-not-get-involved."
+(click: ?page)[==
+"I don't think you killed her."
+(click: ?page)[==
+He looks up.
+(click: ?page)[==
+"I think somebody was there. Somebody with a real specific interest in her not being in your life anymore. Somebody who called me this morning already knowing she was dead."
+(click: ?page)[==
+You watch Jesse's face do the math.
+(click: ?page)[==
+"...no."
+
+"Kid — "
+
+"NO."
+
+[[Let him sit with it]]
+
+
+:: Let him sit with it {"position":"550,1650","size":"100,100"}
+He is breathing hard.
+(click: ?page)[==
+You give him the silence.
+(click: ?page)[==
+After a long time he says: "Why are you telling me this."
+(click: ?page)[==
+You think about it.
+(click: ?page)[==
+"Because I've been on the other side of this my whole life. I've been the guy who talks people into eating it. Who talks them into taking the plea, paying the fine, going quiet, not rocking the boat. And I'm — kid, I'm tired. I am very tired."
+(click: ?page)[==
+"You deserve to know what you're walking out of."
+
+[[Get him out of Albuquerque]]
+
+
+:: Get him out of Albuquerque {"position":"550,1775","size":"100,100"}
+"There's a guy. I know a guy. He makes people disappear. Legally — well, not legally — but thoroughly."
+(click: ?page)[==
+"Costs a lot. You have a lot. That's convenient."
+(click: ?page)[==
+"New name. New state. You never see any of us again. Not me, not him, not this town."
+(click: ?page)[==
+Jesse is staring at the carpet.
+(click: ?page)[==
+Then he says, "Alaska."
+(click: ?page)[==
+"Sure. Alaska. Why not Alaska."
+(click: ?page)[==
+You pull out your phone.
+(click: ?page)[==
+Before you dial, you look at the kid one more time.
+(click: ?page)[==
+You think: this is the first thing I have done in five years that I am actually going to be proud of.
+(click: ?page)[==
+You dial.
+
+[[Good ending]]
+
+
+:: Good ending {"position":"425,1900","size":"100,100"}
+<audio controls autoplay loop>
+  <source src="alaska.mp3" type="audio/mpeg">
+</audio>
+
+Two weeks later you drive out to a spot past the city limits where a van is waiting.
+(click: ?page)[==
+Jesse gets out of your passenger seat with a backpack and nothing else.
+(click: ?page)[==
+He does not hug you. He does not say thank you. He does not say anything.
+(click: ?page)[==
+He nods once.
+(click: ?page)[==
+You nod back.
+(click: ?page)[==
+The van drives north.
+(click: ?page)[==
+You stand there in the dust until the taillights are gone.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/jesse-van.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+(click: ?page)[==
+When you get back to the office, Heisenberg is going to call.
+(click: ?page)[==
+He is going to ask where his partner is.
+(click: ?page)[==
+You are going to tell him you don't know.
+(click: ?page)[==
+You are going to lie to Heisenberg's face.
+(click: ?page)[==
+And the interesting thing is, for the first time in a long time, you are going to sleep fine that night.
+
+''GOOD ENDING — NO WINNERS IN ALBUQUERQUE, BUT ONE SURVIVOR''
+
+
+:: Bad ending {"position":"975,1775","size":"100,100"}
+Six months later.
+(click: ?page)[==
+You are in your office at 11 PM going through a stack of receipts when the burner rings.
+(click: ?page)[==
+It is a number you do not recognize.
+(click: ?page)[==
+You pick it up anyway, because you always pick it up, because that is the job.
+
+"Talk to me."
+
+"Mr. Goodman?"
+
+It is a woman's voice. Tired. Official.
+
+"Speaking."
+
+"This is Detective Alvarez, APD. You're listed as attorney of record for a Jesse Bruce Pinkman. I'm sorry to tell you — "
+
+(click: ?page)[==
+You don't hear the rest.
+(click: ?page)[==
+Not really.
+(click: ?page)[==
+You hear fragments. Motel. Overdose. Alone. Couple of days before anyone found him.
+(click: ?page)[==
+You say the right things. You take down the address. You thank the detective.
+(click: ?page)[==
+You hang up.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/empty-office.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+(click: ?page)[==
+The Statue of Liberty on the roof is deflating for the night. You can hear the motor winding down through the ceiling.
+(click: ?page)[==
+You sit at your desk.
+(click: ?page)[==
+You think about the motel room.
+(click: ?page)[==
+You think about the chair you sat in, across from him, and the moment where you opened your mouth to tell him the truth and you closed it instead.
+(click: ?page)[==
+You think about how the professional thing and the right thing are almost never the same thing, and about how every time you've had to choose, for thirty years now, you have picked the professional thing.
+(click: ?page)[==
+You pour yourself a drink.
+(click: ?page)[==
+You do not cry. You have not cried in a very long time. You are not sure you remember how.
+(click: ?page)[==
+Tomorrow you are going to go to work.
+(click: ?page)[==
+Tomorrow Heisenberg is going to call, and you are going to pick up, and you are going to do your job, because that is what you do.
+(click: ?page)[==
+There are no winners in Albuquerque.
+(click: ?page)[==
+You keep telling yourself that like it's an explanation.
+
+''BAD ENDING — NO WINNERS IN ALBUQUERQUE''

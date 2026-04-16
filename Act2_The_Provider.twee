@@ -1,0 +1,369 @@
+:: StoryTitle
+The Provider
+
+
+:: StoryData
+{
+  "ifid": "A7C2D4E8-3F91-4B65-9A72-5E8D9F1A2B3C",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "morning routine",
+  "zoom": 1
+}
+
+
+:: morning routine {"position":"700,400","size":"100,100"}
+The alarm goes off at 6:15.
+You let it ring for the full minute before you reach over and kill it.
+
+Skyler's side of the bed is already empty. She sleeps lighter since the pregnancy.
+
+You lie there and take inventory.
+The chemo is making your gums ache.
+Your jaw, your left shoulder, the place on your back where the port sits under the skin.
+
+You are Walter Hartwell White, 50 years old, high school chemistry teacher, and the producer of the purest methamphetamine the DEA has ever catalogued.
+
+All this, and it's time to get up for the day.
+
+[[Get up]]
+[[Just five more minutes]]
+
+
+:: Just five more minutes {"position":"550,525","size":"100,100"}
+You close your eyes.
+(click: ?page)[==
+Five minutes is a lie you tell yourself so you can stay under the covers without admitting you are hiding.
+(click: ?page)[==
+You are hiding.
+(click: ?page)[==
+From the mirror. From Skyler. From the phone that is going to ring today and tell you something you do not want to hear.
+(click: ?page)[==
+Get up, Walter.
+
+[[Get up]]
+
+
+:: Get up {"position":"700,525","size":"100,100"}
+You swing your legs over the edge of the bed.
+
+The floor is cold. That helps.
+
+[[Shower]]
+
+
+:: Shower {"position":"700,650","size":"100,100"}
+Hot water on the back of your neck.
+(click: ?page)[==
+You think about the cook schedule.
+(click: ?page)[==
+You think about Jesse. Jesse has been slipping. Jesse has been high at every meet for the last three weeks.
+(click: ?page)[==
+Jesse and that girl.
+(click: ?page)[==
+Jane.
+(click: ?page)[==
+You have not said her name out loud in days and you realize, standing here under the water, that this is deliberate.
+(click: ?page)[==
+Naming a thing makes it real. Makes it something you have to deal with.
+
+[[Downstairs]]
+
+
+:: Downstairs {"position":"700,775","size":"100,100"}
+Skyler is at the counter with a glass of orange juice and the classifieds open in front of her.
+
+"Morning."
+
+"Morning."
+
+She does not look up.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/skyler-kitchen.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+(click: ?page)[==
+Walter Jr. thumps down the stairs, grabs a Pop-Tart, says something that might be a greeting or might be an insult, and is out the door before you can respond.
+(click: ?page)[==
+The kitchen is very quiet.
+(click: ?page)[==
+Skyler turns a page.
+
+[[Try to say something]]
+[[Eat the eggs and leave]]
+
+
+:: Try to say something {"position":"575,900","size":"100,100"}
+"Skyler, I —"
+(click: ?page)[==
+She looks up. Not hostile. Worse. Patient.
+(click: ?page)[==
+Waiting to see which lie you are going to pick today.
+(click: ?page)[==
+You swallow it.
+(click: ?page)[==
+"...I'll be home late tonight. Parent-teacher thing."
+
+She nods and goes back to the classifieds.
+
+You have never been to a parent-teacher thing in your life.
+
+[[Drive to the school]]
+
+
+:: Eat the eggs and leave {"position":"800,900","size":"100,100"}
+You eat the eggs standing up.
+
+You tell her you will be home late.
+
+She does not ask why.
+
+That used to bother you. Now it is a relief, and the relief bothers you more than the silence ever did.
+
+[[Drive to the school]]
+
+
+:: Drive to the school {"position":"700,1025","size":"100,100"}
+Albuquerque morning. Bleached sky. That flat white light that makes everything look like evidence.
+(click: ?page)[==
+You drive the Aztek with both hands on the wheel.
+(click: ?page)[==
+At a red light, you watch a kid maybe twelve years old walk past with a backpack, and you wonder if he has ever bought anything from one of your dealers.
+(click: ?page)[==
+The light turns green.
+(click: ?page)[==
+Your phone buzzes on the passenger seat.
+
+It is Jesse.
+
+[[Answer it]]
+[[Let it go to voicemail]]
+
+
+:: Let it go to voicemail {"position":"825,1150","size":"100,100"}
+You let it ring.
+
+Whatever it is, it can wait until you are not driving.
+
+Whatever it is, it is probably him high and needing something.
+
+You park at the school.
+
+The phone buzzes again. Voicemail.
+
+You do not listen to it.
+
+[[Teach fifth period]]
+
+
+:: Answer it {"position":"575,1150","size":"100,100"}
+"Jesse."
+
+"Yo, Mr. White, listen, I need to — "
+
+He is crying. Or he is high. It is getting harder to tell.
+
+"Jesse. I am driving. What is it."
+
+"Combo, man. Combo got shot. They shot Combo on a corner."
+
+(click: ?page)[==
+You do not say anything for a long moment.
+(click: ?page)[==
+You feel something in your chest that is not quite guilt.
+It is closer to inventory.
+Combo was a distribution node. Combo was a problem and now Combo is a solved problem.
+(click: ?page)[==
+"Jesse, listen to me. You need to stay inside. Do not do anything. I will come see you tonight."
+
+You hang up before he can answer.
+
+[[Teach fifth period]]
+
+
+:: Teach fifth period {"position":"700,1275","size":"100,100"}
+Oxidation states.
+
+You draw the electron shell on the board and your hand is steady, which surprises you.
+
+A girl in the second row is not taking notes. She is staring at her desk.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/classroom.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+(click: ?page)[==
+You think about calling on her just to make her flinch.
+(click: ?page)[==
+You do not.
+(click: ?page)[==
+That used to be automatic. Kindness. The default setting.
+(click: ?page)[==
+Now it is a choice you have to make, and you notice yourself making it, and that is the thing that scares you.
+
+[[The bell rings]]
+
+
+:: The bell rings {"position":"700,1400","size":"100,100"}
+Your phone buzzes in your pocket through the whole last period.
+
+By the time the bell rings, there are nine missed calls.
+
+All from Jesse.
+
+[[Drive to Jesse's apartment]]
+
+
+:: Drive to Jesse's apartment {"position":"700,1525","size":"100,100"}
+It is dark by the time you park on his street.
+(click: ?page)[==
+You sit in the Aztek for a minute before you get out.
+(click: ?page)[==
+You tell yourself you are thinking about what to say.
+(click: ?page)[==
+You are not. You are stalling.
+
+[[Go up to the apartment]]
+
+
+:: Go up to the apartment {"position":"700,1650","size":"100,100"}
+The door is unlocked.
+(click: ?page)[==
+You push it open.
+(click: ?page)[==
+The apartment is dim. The TV is on with no sound.
+(click: ?page)[==
+Jesse is on the bed. On his back. Mouth open.
+(click: ?page)[==
+Jane is next to him. Also on her back. Also mouth open.
+(click: ?page)[==
+For one merciful second you think they are both asleep.
+(click: ?page)[==
+Then Jane makes a sound.
+
+It is not a breathing sound.
+It is the sound of breathing going wrong.
+
+[[Move toward them]]
+
+
+:: Move toward them {"position":"700,1775","size":"100,100"}
+You cross the room in three steps.
+(click: ?page)[==
+Jesse is breathing. Shallow, but breathing. You shake him. He does not wake up but he groans.
+(click: ?page)[==
+Jane is on her back and she is starting to choke on her own vomit.
+(click: ?page)[==
+You know what this is. You know exactly what this is. You have seen the charts.
+(click: ?page)[==
+If you roll her onto her side, she lives.
+(click: ?page)[==
+If you do not, she does not.
+(click: ?page)[==
+You reach out your hand.
+(click: ?page)[==
+Your hand stops.
+
+[[Roll her over]]
+[[Don't]]
+
+
+:: Roll her over {"position":"575,1900","size":"100,100"}
+Your hand keeps moving.
+(click: ?page)[==
+You put your palm on her shoulder and you turn her onto her side and she coughs, wet, awful, and then she is breathing again.
+(click: ?page)[==
+You sit back on your heels.
+(click: ?page)[==
+You are shaking.
+(click: ?page)[==
+Jesse is still out. Jane is breathing now, ragged, but breathing.
+(click: ?page)[==
+You look at the girl who has been pulling your partner apart for three months.
+(click: ?page)[==
+You look at your hand, the one that just saved her life.
+(click: ?page)[==
+You wanted her dead.
+You know you did.
+And you saved her anyway.
+
+That is going to mean something. You do not know what yet.
+
+[[Leave them sleeping]]
+
+
+:: Don't {"position":"825,1900","size":"100,100"}
+Your hand stops in the air above her shoulder.
+(click: ?page)[==
+She chokes.
+(click: ?page)[==
+You watch.
+(click: ?page)[==
+You are not breathing either. You realize this several seconds in.
+(click: ?page)[==
+There is a voice in your head that sounds like you from a year ago, screaming.
+(click: ?page)[==
+There is another voice that is quieter and more reasonable and it is saying: she was going to blackmail you, she was going to take him away, this is the universe handling a problem you did not have the stomach to handle yourself.
+(click: ?page)[==
+The second voice wins.
+(click: ?page)[==
+It does not win by much. But it wins.
+(click: ?page)[==
+She stops making sounds.
+(click: ?page)[==
+The room is very quiet.
+(click: ?page)[==
+You stand up.
+(click: ?page)[==
+You walk out.
+(click: ?page)[==
+You do not remember driving home.
+
+[[Walt returns home]]
+
+
+:: Leave them sleeping {"position":"500,2025","size":"100,100"}
+You pull the blanket up over both of them.
+(click: ?page)[==
+Jane mumbles something in her sleep. Jesse does not move.
+(click: ?page)[==
+You look at the two of them and for a moment you see what Jesse sees.
+(click: ?page)[==
+Two kids. Two broken kids who found each other.
+(click: ?page)[==
+You turn off the TV.
+(click: ?page)[==
+You leave the door unlocked the way you found it.
+(click: ?page)[==
+In the hallway you lean against the wall and you breathe, in and out, in and out, for a long time.
+(click: ?page)[==
+Whatever you are becoming, you stopped it tonight.
+(click: ?page)[==
+Just for tonight.
+
+[[Walt returns home]]
+
+
+:: Walt returns home {"position":"700,2150","size":"100,100"}
+Skyler is asleep on the couch with the TV on.
+(click: ?page)[==
+You stand in the doorway and watch her chest rise and fall.
+(click: ?page)[==
+You think about waking her.
+(click: ?page)[==
+You think about saying: I did something tonight. Or: I didn't do something tonight.
+(click: ?page)[==
+You do not wake her.
+(click: ?page)[==
+You go to the kitchen and you pour yourself a glass of water and you drink it at the counter, in the dark, and you do not turn on any lights.
+(click: ?page)[==
+Tomorrow Saul is going to call.
+(click: ?page)[==
+Tomorrow somebody is going to have to clean this up.
+(click: ?page)[==
+Whatever "this" turns out to be.
+
+''END OF ACT 2''

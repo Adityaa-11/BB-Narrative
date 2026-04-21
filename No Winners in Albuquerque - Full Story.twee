@@ -1,0 +1,1491 @@
+:: StoryTitle
+No Winners in Albuquerque
+
+
+:: StoryData
+{
+  "ifid": "51BBD6BA-779F-4FC2-8737-811006510819",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "other passage",
+  "zoom": 1
+}
+
+
+/* =====================================================================
+   ============================ ACT 1 ==================================
+   ================== NO WINNERS IN ALBUQUERQUE ========================
+   ========================= [ JESSE ] =================================
+   ===================================================================== */
+
+
+:: Anyway... {"position":"700,1050","size":"100,100"}
+“Yknow, just put the joint out.” 
+
+She gets up and starts dressing.
+
+“What are you up to today?” 
+
+You realize you gotta meet up with Mr. White.
+
+[[Go meet up with Mr. White]] 
+
+
+
+:: Go meet up with Mr. White {"position":"500,1200","size":"100,100"}
+Albuquerque morning already feels too bright.
+(click: ?page)[==
+Everything looks bleached out.
+(click: ?page)[==
+As you head toward your car, somebody yells:
+(click: ?page)[==
+“Yo! Pinkman!”
+(click: ?page)[==
+Normally someone shouting your last name out here means you're about to get popped, but that voice...
+(click: ?page)[==
+Combo is standing half out the window of his car, grinning like an idiot.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/combo.jpg" 
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+[[Is that a cake box?]] 
+
+
+:: Honestly? {"position":"600,775","size":"100,100"}
+“Yeah, I’ve tried to stop before.”
+(click: ?page)[==
+“...really…”
+(click: ?page)[==
+“Actually, man, you’re making me remember this funny story.”
+(click: ?page)[==
+You take a long drag on the joint. 
+(click: ?page)[==
+No matter how many times you do it, the smoke still just kind of feels wrong sliding down your throat. 
+(click: ?page)[==
+Like you’re breaking a rule.
+(click: ?page)[==
+I like this feeling somedays, but somedays it’s just another boring thing about my life.
+
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/Jesse-and-Jane.jpg" 
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+
+[[That time in high school..]] 
+
+
+:: I don't think so, haha. {"position":"750,775","size":"100,100"}
+“I dunno, I mean, I’ve never really tried to quit smoking. It’s fun and I feel like it still gets me really high. Like, it still has that psychological effect.”
+(click: ?page)[==
+“...yeah.”
+(click: ?page)[==
+“I could take it or leave it though, man. I’d just get rid of my smoking stuff.”
+(click: ?page)[==
+“Okay, what happens when that Badger guy asks you to roll one for him?”
+(click: ?page)[==
+“I mean, it’d sound dumb, but I’d just tell him I quit.” 
+(click: ?page)[==
+You hand her the joint. 
+(click: ?page)[==
+“Do you really think it’s as easy as making the right choice every time? 
+(click: ?page)[==
+You know, sometimes you NEED something and there’s no choice about it.”
+(click: ?page)[==
+She looks at the joint between her fingers. 
+(click: ?page)[==
+“And the heroin, the black tar stuff… well, it’s kinda… sounds bad saying I want to do it bad…but…” 
+(click: ?page)[==
+“I’ve seen what the H did to Skinny Pete. God. Wendy and her teeth. Jesus. It’s good you’re off that stuff.” 
+(click: ?page)[==
+She takes a few puffs, makes a grimace, and then gets up.
+
+[[Anyway...]] 
+
+
+:: Is Jane up? {"position":"700,650","size":"100,100"}
+Jane stirs and wakes up. She doesn’t realize what’s happening for a few seconds, but then jolts.
+
+(click: ?page)[==
+“Dude! Don’t smoke here! The smell gets in the walls!
+(click: ?page)[==
+Right. You’re still her tenant, technically.
+
+“Right, I’m still your tenant, technically.”
+
+(click: ?page)[==
+You keep the joint ablaze. 
+
+She looks at you crossly, then settles back down. 
+“...can I have some?” 
+“What about your, uh…” You gesture toward her AA 90-day chip. 
+
+That’s what stopped her last time, and all the other times.
+
+
+(click: ?page)[==
+“A lot of the AA people end up using grass. It’s better for you than being hopped on cigarettes, they say.
+
+“...Hey, have you ever tried to stop smoking weed?”
+
+[[Honestly?]] 
+
+[[I don't think so, haha.]] 
+
+
+:: Is that a cake box? {"position":"675,1250","size":"100,100"}
+“Are you carrying any scante right now? You’re supposed to be working!”
+(click: ?page)[==
+“Nah man, I just gotta get this stupid ass cake over to my momma’s fridge.”
+(click: ?page)[==
+“Lil mom’s boy… what kinda cake is it? let me have some!”
+(click: ?page)[==
+“It’s for her birthday, assbag.”
+(click: ?page)[==
+Combo laughs.
+Same dumb laugh he always has.
+Like every joke is the funniest thing he ever heard.
+(click: ?page)[==
+He pats the box carefully.
+(click: ?page)[==
+“Three milk cake, man.”
+“Tres leches?”
+“Yeah, whatever. Mexican milk cake.”
+(click: ?page)[==
+You shake your head.
+(click: ?page)[==
+“Dude you look weirdly happy carrying that thing.”
+(click: ?page)[==
+Combo shrugs.
+(click: ?page)[==
+For all the stupid stuff Combo says, he always shows up for his mama.
+(click: ?page)[==
+You remember the wooden box.
+(click: ?page)[==
+The ounce of weed.
+(click: ?page)[==
+The box.
+(click: ?page)[==
+His mom running her hand across the lid like it was expensive.
+(click: ?page)[==
+Like it mattered.
+(click: ?page)[==
+Ms. Ortega always treated you like you were worth feeding.
+Tamales.
+Sweet bread.
+Real food.
+Not frozen garbage or stale cereal.
+(click: ?page)[==
+Way nicer than your own house ever felt.
+(click: ?page)[==
+Combo points at you.
+(click: ?page)[==
+"See you later homes, we gotta hit the club sometime. Unless that Jane ho keepin you home haha"
+
+[[hahahahaha]] 
+
+
+
+
+:: Light a joint {"position":"775,525","size":"100,100"}
+Nothing like that morning joint.
+
+[[Is Jane up?]] 
+
+
+:: Not right now {"position":"600,525","size":"100,100"}
+Not right now?
+(click: ?page)[==
+ The hell… what do I got to do?
+(click: ?page)[==
+That’s pretty weird. No matter how shitty the day ends up being, a joint always makes the morning nice.
+(click: ?page)[==
+Once you see the rolls from last night, you kinda realize you weren’t really serious about not smoking any. It’s been like years since you had to wake up without one.
+
+[[Is Jane up?]] 
+
+
+
+:: That time in high school.. {"position":"600,925","size":"100,100"}
+<audio controls autoplay loop>
+  <source src="boxmonologue.mp3" type="audio/mpeg">
+</audio>
+
+(click: ?page)[==
+I took this, um, vo-tech class in high school, 
+woodworking. Well, I took a lot of vo-tech classes 'cause it was just a big jerk-off. But 
+this one time, I had this teacher, name of, um, 
+Mr., uh, Mr. Pike. 
+Guess he was, like, a Marine or something before he got old. He was hard of hearing. My, uh, my project for his class was to make this, 
+um, wooden box, you know, like a small, um... 
+Just like a, like a box, you know, to put stuff in. 
+So I, I wanted to get the thing done as fast as possible. Um, I figured I could cut classes for the rest of the semester and he couldn't flunk me as long as I, you know, made the thing. 
+So I finished it in a couple days, and it looked... It was pretty lame, but it worked, you know, for putting stuff in or whatnot. 
+So when I, uh, showed it to Mr. Pike 
+for my grade, 
+uh, he looked at it and said, 
+"Is that the best you can do?" 
+At first I thought to myself, "Hell yeah, bitch. Now give me a D and shut up so I can go blaze one with my boys." 
+I don't know. Maybe it was the way he said it, but 
+it was like he, he wasn't exactly saying it sucked. He was just asking me honestly, "Is, 
+is that all you got?" 
+And for some reason, I thought to myself, 
+"Yeah, man, I, I can do better." So I started from scratch. I made another, then another, and by the end of the semester, by, like, box number five, 
+I had built this thing. 
+You should have seen it. It was insane. 
+I mean, I built it out of Peruvian walnut with inlaid zebrawood. 
+It was fitted with pegs, no screws. I sanded it for days until 
+it was smooth as glass. Then I rubbed all the wood with tung oil so it was rich and dark. 
+It even smelled good. You know, you put your nose in it and breathed in. 
+It was... It was perfect. 
+I, um, 
+I gave it to my mom. 
+You know, I didn't give the box to my mom. 
+I traded it for an ounce of weed.
+[[Anyway...]]
+
+
+:: hahahahaha {"position":"700,1375","size":"100,100"}
+“Hey, whatever, man.”
+
+“YOU just need to keep those junkies in line. They still believe that you killed that other junkie.”
+
+“Yeah, man. Alright, man.” 
+
+It always ends up like this with Mr. White. He’s so anal. 
+(click: ?page)[==
+Ring ring ring. 
+(click: ?page)[==
+“Yo wassup Pete. Yo, chill out…”
+(click: ?page)[==
+The way Pete is talking, you can barely understand. What is he talking about?
+(click: ?page)[==
+“Is that Skinny Pete? Let me see that.”
+(click: ?page)[==
+The phone slips out of your hands. What the hell was Pete talking about? 
+(click: ?page)[==
+“Pete? What’s that? Combo? Who the hell is Combo? No, Jesse is… he’s doing something.” 
+(click: ?page)[==
+“Did he have product on him? You quit? What do you mean, you quit. Hey, come to Jesse’s flat and we’ll talk, alright? 
+(click: ?page)[==
+No, I don’t know who killed Combo! Just COME and we can talk about things, okay?” 
+(click: ?page)[==
+There’s a lump in your throat but you don’t know why.
+
+(click: ?page)[==
+Swallow the spit. 
+(click: ?page)[==
+It won’t go down.
+(click: ?page)[==
+Combo? Didn’t you just see him on your way here? 
+(click: ?page)[==
+“Pete? Peter? Dammit! Jesse, help me out here.”
+(click: ?page)[==
+That’s weird… and he was holding a cake. 
+(click: ?page)[==
+A cake?
+(click: ?page)[==
+“Jesse.” 
+(click: ?page)[==
+Why the hell did he have a cake? 
+(click: ?page)[==
+“Jesse!” 
+(click: ?page)[==
+Oh, duh… ‘cause tomorrow is Ms. Ortega’s birthday.
+
+
+:: other passage {"position":"700,400","size":"100,100"}
+It’s morning. 
+You’re just now blinking awake. 
+Jane’s still sleeping next to you.
+Whenever you wake up next to her, you notice that she sounds kinda catlike with her little snores. A little snrrrrk, snrrrrk purring gently beside	s you. It’s nice. Jane’s cool.
+
+You are Jesse Pinkman, certified high school burnout, 26 and 5’9 in stocking feet, and co-producer of the finest scante this side of the border. 
+
+All this, and it’s time to get up for the day.
+
+[[Light a joint]] 
+[[Not right now]] 
+
+
+/* =====================================================================
+   =========================== END ACT 1 ===============================
+   ===================================================================== */
+
+
+/* =====================================================================
+   ============================ ACT 2 ==================================
+   ======================= THE PROVIDER ================================
+   ========================= [ WALTER ] ================================
+   ===================================================================== */
+
+
+:: morning routine {"position":"700,400","size":"100,100"}
+The alarm goes off at 6:15.
+You let it ring for the full minute before you reach over and kill it.
+
+Skyler's side of the bed is already empty. She sleeps lighter since the pregnancy.
+
+You lie there and take inventory.
+The chemo is making your gums ache.
+Your jaw, your left shoulder, the place on your back where the port sits under the skin.
+
+You are Walter Hartwell White, 50 years old, high school chemistry teacher, and the producer of the purest methamphetamine the DEA has ever catalogued.
+
+All this, and it's time to get up for the day.
+
+[[Get up]]
+[[Just five more minutes]]
+
+
+:: Just five more minutes {"position":"550,525","size":"100,100"}
+You close your eyes.
+(click: ?page)[==
+Five minutes is a lie you tell yourself so you can stay under the covers without admitting you are hiding.
+(click: ?page)[==
+You are hiding.
+(click: ?page)[==
+From the mirror. From Skyler. From the phone that is going to ring today and tell you something you do not want to hear.
+(click: ?page)[==
+Get up, Walter.
+
+[[Get up]]
+
+
+:: Get up {"position":"700,525","size":"100,100"}
+You swing your legs over the edge of the bed.
+
+The floor is cold. That helps.
+
+[[Shower]]
+
+
+:: Shower {"position":"700,650","size":"100,100"}
+Hot water on the back of your neck.
+(click: ?page)[==
+You think about the cook schedule.
+(click: ?page)[==
+You think about Jesse. Jesse has been slipping. Jesse has been high at every meet for the last three weeks.
+(click: ?page)[==
+Jesse and that girl.
+(click: ?page)[==
+Jane.
+(click: ?page)[==
+You have not said her name out loud in days and you realize, standing here under the water, that this is deliberate.
+(click: ?page)[==
+Naming a thing makes it real. Makes it something you have to deal with.
+
+[[Downstairs]]
+
+
+:: Downstairs {"position":"700,775","size":"100,100"}
+Skyler is at the counter with a glass of orange juice and the classifieds open in front of her.
+
+"Morning."
+
+"Morning."
+
+She does not look up.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/skyler-kitchen.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+(click: ?page)[==
+Walter Jr. thumps down the stairs, grabs a Pop-Tart, says something that might be a greeting or might be an insult, and is out the door before you can respond.
+(click: ?page)[==
+The kitchen is very quiet.
+(click: ?page)[==
+Skyler turns a page.
+
+[[Try to say something]]
+[[Eat the eggs and leave]]
+
+
+:: Try to say something {"position":"575,900","size":"100,100"}
+"Skyler, I —"
+(click: ?page)[==
+She looks up. Not hostile. Worse. Patient.
+(click: ?page)[==
+Waiting to see which lie you are going to pick today.
+(click: ?page)[==
+You swallow it.
+(click: ?page)[==
+"...I'll be home late tonight. Parent-teacher thing."
+
+She nods and goes back to the classifieds.
+
+You have never been to a parent-teacher thing in your life.
+
+[[Drive to the school]]
+
+
+:: Eat the eggs and leave {"position":"800,900","size":"100,100"}
+You eat the eggs standing up.
+
+You tell her you will be home late.
+
+She does not ask why.
+
+That used to bother you. Now it is a relief, and the relief bothers you more than the silence ever did.
+
+[[Drive to the school]]
+
+
+:: Drive to the school {"position":"700,1025","size":"100,100"}
+Albuquerque morning. Bleached sky. That flat white light that makes everything look like evidence.
+(click: ?page)[==
+You drive the Aztek with both hands on the wheel.
+(click: ?page)[==
+At a red light, you watch a kid maybe twelve years old walk past with a backpack, and you wonder if he has ever bought anything from one of your dealers.
+(click: ?page)[==
+The light turns green.
+(click: ?page)[==
+Your phone buzzes on the passenger seat.
+
+It is Jesse.
+
+[[Answer it]]
+[[Let it go to voicemail]]
+
+
+:: Let it go to voicemail {"position":"825,1150","size":"100,100"}
+You let it ring.
+
+Whatever it is, it can wait until you are not driving.
+
+Whatever it is, it is probably him high and needing something.
+
+You park at the school.
+
+The phone buzzes again. Voicemail.
+
+You do not listen to it.
+
+[[Teach fifth period]]
+
+
+:: Answer it {"position":"575,1150","size":"100,100"}
+"Jesse."
+
+"Yo, Mr. White, listen, I need to — "
+
+He is crying. Or he is high. It is getting harder to tell.
+
+"Jesse. I am driving. What is it."
+
+"Combo, man. Combo got shot. They shot Combo on a corner."
+
+(click: ?page)[==
+You do not say anything for a long moment.
+(click: ?page)[==
+You feel something in your chest that is not quite guilt.
+It is closer to inventory.
+Combo was a distribution node. Combo was a problem and now Combo is a solved problem.
+(click: ?page)[==
+"Jesse, listen to me. You need to stay inside. Do not do anything. I will come see you tonight."
+
+You hang up before he can answer.
+
+[[Teach fifth period]]
+
+
+:: Teach fifth period {"position":"700,1275","size":"100,100"}
+Oxidation states.
+
+You draw the electron shell on the board and your hand is steady, which surprises you.
+
+A girl in the second row is not taking notes. She is staring at her desk.
+
+<div style="text-align:center; margin:20px 0;">
+  <img src="images/classroom.jpg"
+       style="width:400px; max-width:90%; height:auto; border-radius:8px;">
+</div>
+
+(click: ?page)[==
+You think about calling on her just to make her flinch.
+(click: ?page)[==
+You do not.
+(click: ?page)[==
+That used to be automatic. Kindness. The default setting.
+(click: ?page)[==
+Now it is a choice you have to make, and you notice yourself making it, and that is the thing that scares you.
+
+[[The bell rings]]
+
+
+:: The bell rings {"position":"700,1400","size":"100,100"}
+Your phone buzzes in your pocket through the whole last period.
+
+By the time the bell rings, there are nine missed calls.
+
+All from Jesse.
+
+[[Drive to Jesse's apartment]]
+
+
+:: Drive to Jesse's apartment {"position":"700,1525","size":"100,100"}
+It is dark by the time you park on his street.
+(click: ?page)[==
+You sit in the Aztek for a minute before you get out.
+(click: ?page)[==
+You tell yourself you are thinking about what to say.
+(click: ?page)[==
+You are not. You are stalling.
+
+[[Go up to the apartment]]
+
+
+:: Go up to the apartment {"position":"700,1650","size":"100,100"}
+The door is unlocked.
+(click: ?page)[==
+You push it open.
+(click: ?page)[==
+The apartment is dim. The TV is on with no sound.
+(click: ?page)[==
+Jesse is on the bed. On his back. Mouth open.
+(click: ?page)[==
+Jane is next to him. Also on her back. Also mouth open.
+(click: ?page)[==
+For one merciful second you think they are both asleep.
+(click: ?page)[==
+Then Jane makes a sound.
+
+It is not a breathing sound.
+It is the sound of breathing going wrong.
+
+[[Move toward them]]
+
+
+:: Move toward them {"position":"700,1775","size":"100,100"}
+You cross the room in three steps.
+(click: ?page)[==
+Jesse is breathing. Shallow, but breathing. You shake him. He does not wake up but he groans.
+(click: ?page)[==
+Jane is on her back and she is starting to choke on her own vomit.
+(click: ?page)[==
+You know what this is. You know exactly what this is. You have seen the charts.
+(click: ?page)[==
+If you roll her onto her side, she lives.
+(click: ?page)[==
+If you do not, she does not.
+(click: ?page)[==
+You reach out your hand.
+(click: ?page)[==
+Your hand stops.
+
+[[Roll her over]]
+[[Don't]]
+
+
+:: Roll her over {"position":"575,1900","size":"100,100"}
+Your hand keeps moving.
+(click: ?page)[==
+You put your palm on her shoulder and you turn her onto her side and she coughs, wet, awful, and then she is breathing again.
+(click: ?page)[==
+You sit back on your heels.
+(click: ?page)[==
+You are shaking.
+(click: ?page)[==
+Jesse is still out. Jane is breathing now, ragged, but breathing.
+(click: ?page)[==
+You look at the girl who has been pulling your partner apart for three months.
+(click: ?page)[==
+You look at your hand, the one that just saved her life.
+(click: ?page)[==
+You wanted her dead.
+You know you did.
+And you saved her anyway.
+
+That is going to mean something. You do not know what yet.
+
+[[Leave them sleeping]]
+
+
+:: Don't {"position":"825,1900","size":"100,100"}
+Your hand stops in the air above her shoulder.
+(click: ?page)[==
+She chokes.
+(click: ?page)[==
+You watch.
+(click: ?page)[==
+You are not breathing either. You realize this several seconds in.
+(click: ?page)[==
+There is a voice in your head that sounds like you from a year ago, screaming.
+(click: ?page)[==
+There is another voice that is quieter and more reasonable and it is saying: she was going to blackmail you, she was going to take him away, this is the universe handling a problem you did not have the stomach to handle yourself.
+(click: ?page)[==
+The second voice wins.
+(click: ?page)[==
+It does not win by much. But it wins.
+(click: ?page)[==
+She stops making sounds.
+(click: ?page)[==
+The room is very quiet.
+(click: ?page)[==
+You stand up.
+(click: ?page)[==
+You walk out.
+(click: ?page)[==
+You do not remember driving home.
+
+[[Walt returns home]]
+
+
+:: Leave them sleeping {"position":"500,2025","size":"100,100"}
+You pull the blanket up over both of them.
+(click: ?page)[==
+Jane mumbles something in her sleep. Jesse does not move.
+(click: ?page)[==
+You look at the two of them and for a moment you see what Jesse sees.
+(click: ?page)[==
+Two kids. Two broken kids who found each other.
+(click: ?page)[==
+You turn off the TV.
+(click: ?page)[==
+You leave the door unlocked the way you found it.
+(click: ?page)[==
+In the hallway you lean against the wall and you breathe, in and out, in and out, for a long time.
+(click: ?page)[==
+Whatever you are becoming, you stopped it tonight.
+(click: ?page)[==
+Just for tonight.
+
+[[Walt returns home]]
+
+
+:: Walt returns home {"position":"700,2150","size":"100,100"}
+Skyler is asleep on the couch with the TV on.
+(click: ?page)[==
+You stand in the doorway and watch her chest rise and fall.
+(click: ?page)[==
+You think about waking her.
+(click: ?page)[==
+You think about saying: I did something tonight. Or: I didn't do something tonight.
+(click: ?page)[==
+You do not wake her.
+(click: ?page)[==
+You go to the kitchen and you pour yourself a glass of water and you drink it at the counter, in the dark, and you do not turn on any lights.
+(click: ?page)[==
+Tomorrow Saul is going to call.
+(click: ?page)[==
+Tomorrow somebody is going to have to clean this up.
+(click: ?page)[==
+Whatever "this" turns out to be.
+
+''END OF ACT 2''
+
+
+/* =====================================================================
+   =========================== END ACT 2 ===============================
+   ===================================================================== */
+
+
+/* =====================================================================
+   ============================ ACT 3 ==================================
+   ==================== DAWN AT THE STRIP MALL =========================
+   ========================== [ SAUL ] =================================
+   ===================================================================== */
+
+
+:: Act 3 Start {"position":"700,1600","size":"100,100"}
+(if: (history:) contains "Jane Lives - Act 2 End")[
+  (go-to: "Act 3 - Jane Alive - Dawn")
+](else:)[
+  (go-to: "Act 3 - Jane Dead - Dawn")
+]
+
+
+:: Act 3 - Jane Dead - Dawn {"position":"900,1700","size":"100,100"}
+Dawn at the strip mall.
+
+Saul Goodman — real name James McGill, age undisclosed, height whatever the shoes say — unlocks Saul Goodman and Associates.
+
+There are no associates.
+
+He flips on the lights. The Statue of Liberty inflatable on the roof hisses awake through the ceiling. He brews what he calls constitutional coffee, which is just the cheapest grounds at the QuikMart run through twice.
+
+He feels the call coming the way old men feel weather.
+
+(click: ?page)[==
+The burner has three missed calls from HEISENBERG.
+Two from KID.
+(click: ?page)[==
+He stares at both names for a long time.
+
+### [DECISION 1] — Who do you call back first?
+
+[[Call Heisenberg - Jane Dead]] 
+[[Call the Kid First - Jane Dead]]
+
+
+:: Call the Kid First - Jane Dead {"position":"750,1850","size":"100,100"}
+Voicemail. Of course.
+
+Saul leaves a message in the voice he uses when he's trying to sound calm and isn't:
+
+"Call me back before you call anyone else. That includes nine-one-one. *Especially* nine-one-one. Don't touch anything. Don't talk to anyone. Just — call me back."
+
+(click: ?page)[==
+He hangs up and calls Heisenberg.
+
+Walt picks up on the first ring.
+
+*"The girl is dead."*
+
+(click: ?page)[==
+Three words. Flat. Like a man reporting weather.
+
+Saul absorbs it the way he absorbs most things — by not absorbing it at all, by filing it immediately into the professional column, by becoming the lawyer in the room even when the room is empty.
+
+(click: ?page)[==
+"Go home. Shower. Kiss your wife. Go to work tomorrow. I'll handle the rest."
+
+He hangs up. Calls Mike.
+
+[[The Mike Call - Jane Dead]]
+
+
+:: Call Heisenberg - Jane Dead {"position":"1050,1850","size":"100,100"}
+Walt picks up on the first ring.
+
+*"The girl is dead."*
+
+(click: ?page)[==
+Three words. Flat. Not grief. Not panic. Just — information.
+
+Saul absorbs it the way he absorbs most things — by not absorbing it at all. Files it immediately into the professional column.
+
+(click: ?page)[==
+"Go home," Saul says. "Shower. Kiss your wife. Go to work tomorrow. I'll handle the rest."
+
+He hangs up and tries the Kid.
+
+Voicemail.
+
+He leaves a message. Calls Mike.
+
+[[The Mike Call - Jane Dead]]
+
+
+:: The Mike Call - Jane Dead {"position":"900,2000","size":"100,100"}
+Thirty seconds flat.
+
+Address. Apartment number. Specific situation.
+
+Mike doesn't do small talk.
+
+"The kid in the apartment too?"
+
+(click: ?page)[==
+Saul hears what's inside the question. He knows Mike well enough to know Mike isn't asking because he wants to hurt anyone. He's asking because Mike is thorough and thorough means accounting for all the variables.
+
+But still.
+
+"Do NOT touch the kid."
+
+"I'm not going to touch the kid, Saul."
+
+(click: ?page)[==
+Mike hangs up. Saul realizes his hand is shaking on the receiver.
+
+He didn't actually think Mike would. But he had to say it anyway.
+
+That small moment — the fact that he had to say it — is the first crack in the armor this morning.
+
+(click: ?page)[==
+Hours pass. Saul doesn't leave the office.
+
+He watches the Statue of Liberty inflate and deflate through the window. He thinks about how he got here. Not this morning — here. How every small professional compromise lines up behind you like cars on a highway until you can't see where the road started.
+
+The burner rings. It's the Kid.
+
+[[Jesse Calls - Jane Dead]]
+
+
+:: Jesse Calls - Jane Dead {"position":"900,2150","size":"100,100"}
+Jesse is crying so hard Saul can't understand him for thirty seconds.
+
+He's trying to say something about Jane. He's trying to say something about waking up and she was just —
+
+"I know," Saul says. "I already know. Listen to me. There's a guy coming to take care of everything. Everything, okay? His name doesn't matter. He's going to make this look like what it is — an overdose. Because it *was* an overdose."
+
+(click: ?page)[==
+Jesse starts to ask *did Mr. White —*
+
+"Motel. East side. Now. I'll come to you."
+
+Jesse goes quiet. Then: "Okay."
+
+(click: ?page)[==
+Saul sits in the car outside the motel for four minutes before going in.
+
+He tells himself he's thinking about what to say. He isn't. He's stalling. He's been stalling his whole career.
+
+[[The Motel Room - Jane Dead]]
+
+
+:: The Motel Room - Jane Dead {"position":"900,2300","size":"100,100"}
+Jesse is sitting on the edge of the bed with his hands clasped between his knees.
+
+For one second he looks like a kid sent to the principal's office.
+
+Then Saul looks at his face again and it's nothing like that. It's grief so raw it hasn't found a shape yet.
+
+Saul pulls up the one chair. They sit in silence.
+
+(click: ?page)[==
+Then Jesse says, very quietly:
+
+*"I think I killed her."*
+
+(click: ?page)[==
+Saul sees his two options with perfect clarity.
+
+He can tell Jesse what he suspects. That Walt was there. That Walt let it happen — or helped it happen — or at minimum stood there and did nothing while a girl choked to death because she was inconvenient.
+
+Or he can let Jesse carry it.
+
+Easier. Cleaner. Better for the operation. Better for the retainer.
+
+(click: ?page)[==
+Jesse is staring at the carpet.
+
+### [DECISION 2] — What do you tell him?
+
+[[Let Jesse Believe It - Jane Dead]]
+[[Tell Jesse the Truth - Jane Dead]]
+
+
+:: Let Jesse Believe It - Jane Dead {"position":"700,2475","size":"100,100"}
+Saul goes into professional mode like flipping a switch.
+
+"Addicts die, Jesse. It's what happens. She rolled the wrong way. You couldn't have known. You couldn't have stopped it."
+
+(click: ?page)[==
+Jesse nods. He isn't really hearing the words. He's hearing the permission to hate himself, and that's what he wanted — something that makes the grief make sense by giving it an address.
+
+Saul watches it settle on him like a coat.
+
+(click: ?page)[==
+"I know a place," Saul says. "Past Los Lunas. Takes cash, no questions. You go in, you get clean, you come out the other side."
+
+Jesse doesn't say anything for a long time.
+
+"...okay."
+
+(click: ?page)[==
+In the parking lot, Saul stands next to his car for a full minute before getting in.
+
+He did the professional thing. Kept the client alive. Kept the operation intact. Kept the retainer on the desk.
+
+He also just watched a kid take the weight of something that wasn't his, and handed him the straps himself.
+
+He gets in the car.
+
+[[Saul's Decision - Bad Path]]
+
+
+:: Tell Jesse the Truth - Jane Dead {"position":"1100,2475","size":"100,100"}
+Saul opens his mouth.
+
+Closes it.
+
+Opens it again.
+
+This is going to violate approximately nine bar association rules and his own rule number one, which is *do not get involved*, and which he has never once successfully followed in thirty years of practice.
+
+(click: ?page)[==
+"I don't think you killed her."
+
+Jesse looks up.
+
+"I think somebody was there. Somebody who knew she was a problem. Somebody who called me that morning *already knowing* she was dead."
+
+(click: ?page)[==
+Jesse's face does the math slowly. Then all at once.
+
+"No."
+
+Saul gives him the silence.
+
+Jesse stares at the wall. His jaw is tight. His hands are shaking.
+
+After a long time: "Why are you telling me this?"
+
+(click: ?page)[==
+Saul surprises himself with the answer.
+
+"Because I've been on the other side of this my whole career. I'm the guy who talks people into eating it. And I am very tired. You deserve to know what you're walking out of."
+
+(click: ?page)[==
+Jesse doesn't say anything. He doesn't have to.
+
+### [DECISION 3] — What do you tell Jesse to do?
+
+[[Get Jesse Out - Jane Dead Good Ending]]
+[[Leave Jesse to His Choices - Jane Dead Bad Ending]]
+
+
+:: Get Jesse Out - Jane Dead Good Ending {"position":"1100,2650","size":"100,100"}
+"I know a guy," Saul says. "Not the rehab kind. The disappearing kind. New name, new state. You drive north and you don't come back."
+
+(click: ?page)[==
+Jesse stares at the carpet.
+
+"Alaska," he says finally.
+
+"Sure. Alaska. Why not Alaska."
+
+(click: ?page)[==
+Two weeks later, Saul drives Jesse to a pull-off past the city limits where a plain white van is idling. Jesse gets out with a backpack and nothing else.
+
+He doesn't hug Saul. Doesn't say thank you. Doesn't say anything.
+
+He nods once.
+
+Saul nods back.
+
+The van drives north.
+
+(click: ?page)[==
+Saul stands in the dust until the taillights are gone.
+
+When he gets back to the office, Heisenberg is going to call. Walt is going to ask where his partner went. Saul is going to lie to his face.
+
+For the first time in a long time, he's going to sleep fine that night.
+
+(click: ?page)[==
+---
+
+*Jesse Pinkman drove north and kept driving.*
+
+*He changed his name. He learned to work with his hands. He built things.*
+
+*He never cooked again.*
+
+---
+
+**[GOOD ENDING — JESSE]**
+
+[[Epilogue - Jane Dead Good]]
+
+
+:: Epilogue - Jane Dead Good {"position":"1100,2825","size":"100,100"}
+Three months later, Walter White turned himself in.
+
+Not to the DEA. Not to Hank. He drove to the police station on a Tuesday morning, asked for a cup of coffee, and waited.
+
+The cancer had come back. Stage four. He'd known for six weeks.
+
+He didn't want to die in the lab. He didn't want to die as Heisenberg.
+
+(click: ?page)[==
+The confession took four hours. Every name. Every corner. Every cook site.
+
+Skyler kept the house. Flynn — Walter Jr. — didn't speak to his father for two years, and then he did.
+
+It wasn't forgiveness. But it wasn't nothing.
+
+(click: ?page)[==
+Saul Goodman closed his practice on a Friday. His secretary wasn't surprised. 
+
+He drove west until the highway ran out, then turned south, and kept going until New Mexico was a memory.
+
+He opened a small practice in a small town where nobody knew his name.
+
+That part, at least, he was good at.
+
+(click: ?page)[==
+---
+
+*There are no winners in Albuquerque.*
+
+*But sometimes people get out.*
+
+---
+
+**[END — GOOD PATH]**
+
+
+:: Saul's Decision - Bad Path {"position":"700,2650","size":"100,100"}
+Three days later, Walt calls.
+
+He wants to scale up. Gus Fring. Industrial. The kind of operation where there's no walking back.
+
+### [DECISION 3] — What do you tell Walt?
+
+[[Broker the Gus Deal - Jane Dead Bad Ending]]
+[[Warn Jesse Instead - Jane Dead Bad Ending]]
+
+
+:: Broker the Gus Deal - Jane Dead Bad Ending {"position":"550,2825","size":"100,100"}
+Saul makes the introduction.
+
+He tells himself it's just business. He tells himself Jesse will be fine. He tells himself Walt knows what he's doing.
+
+He tells himself a lot of things that month.
+
+(click: ?page)[==
+He's still telling himself things when the DEA starts watching the laundry.
+
+When Gus dies.
+
+When the cartel burns.
+
+When Jack Welker's crew takes over the territory.
+
+(click: ?page)[==
+Jesse doesn't get out.
+
+Not for a long time.
+
+Jack's men find him. Put him in a hole. Make him cook.
+
+He cooks the best meth in the country in a cage with a chain around his ankle and a photo of Andrea and Brock on the wall that he isn't allowed to touch.
+
+He doesn't sleep. He doesn't eat much. He stops being Jesse Pinkman and becomes something smaller and quieter that has no name.
+
+(click: ?page)[==
+Walt dies in the lab.
+
+Shot. By the same machine gun he built. For the same people he chose over Jesse, over and over again, until Jesse was the only one left to save and Walt had nothing left to spend.
+
+(click: ?page)[==
+Saul ends up in Omaha.
+
+Managing a Cinnabon.
+
+He wears a different name like an old coat. He watches the door every time it opens. He doesn't call anyone he used to know.
+
+Some mornings, when it's slow and the mall is quiet, he thinks about that motel room. The kid with his hands between his knees.
+
+The thing he didn't say.
+
+(click: ?page)[==
+---
+
+*There are no winners in Albuquerque.*
+
+*Some people don't even make it out.*
+
+---
+
+**[END — BAD PATH]**
+
+
+:: Warn Jesse Instead - Jane Dead Bad Ending {"position":"850,2825","size":"100,100"}
+Saul calls Jesse before Walt.
+
+He tells him Walt is going deeper. Tells him if Jesse doesn't get out now, he never will.
+
+Jesse listens. Says he'll think about it.
+
+(click: ?page)[==
+He doesn't get out.
+
+He can't. He's already too deep — in the money, in the guilt, in the grief of Jane that never left. He tells himself he'll leave after the next cook. Then the next one.
+
+Then Brock gets poisoned and Jesse stops thinking about leaving at all.
+
+(click: ?page)[==
+Jack Welker's crew takes over the territory.
+
+They find Jesse.
+
+They put him in a hole and make him cook.
+
+He cooks the best meth in the country in a cage with a photo of Andrea and Brock on the wall that he isn't allowed to touch.
+
+(click: ?page)[==
+Walt dies in the lab.
+
+Saul ends up in Omaha.
+
+Managing a Cinnabon.
+
+Some mornings, when it's slow and the mall is quiet, he thinks about Jesse's voice on the burner that day. *I'll think about it.*
+
+He never called back.
+
+(click: ?page)[==
+---
+
+*There are no winners in Albuquerque.*
+
+*Some people don't even make it out.*
+
+---
+
+**[END — BAD PATH]**
+
+
+:: Act 3 - Jane Alive - Dawn {"position":"300,1700","size":"100,100"}
+Dawn at the strip mall.
+
+Saul Goodman — real name James McGill, age undisclosed, height whatever the shoes say — unlocks Saul Goodman and Associates.
+
+There are no associates.
+
+He brews constitutional coffee. Flips through three files he already knows by heart. Waits.
+
+The difference this morning, the thing that's sitting differently in his chest, is that the girl is alive.
+
+(click: ?page)[==
+He knows what Walt almost did. He knows because Walt called at 3 AM, voice too steady, the kind of steady that only happens when someone has just decided something and hasn't processed it yet.
+
+*She's fine,* Walt said. *Jesse's fine.*
+
+The way he said *fine* told Saul everything.
+
+(click: ?page)[==
+The burner rings. It's the Kid.
+
+[[Jesse Calls - Jane Alive]]
+
+
+:: Jesse Calls - Jane Alive {"position":"300,1875","size":"100,100"}
+"Yo, it's me."
+
+"I know it's you. What's happening?"
+
+"Jane's alive." 
+
+A pause. Like Jesse is still surprised by it.
+
+"She's okay. She was — it was bad, but she's okay. And Saul, I think Mr. White was there. I think he was in the apartment."
+
+(click: ?page)[==
+Saul is quiet for a moment.
+
+"What makes you think that?"
+
+"Because she told me. She woke up and she — she says she saw him. Standing there. Just standing there."
+
+(click: ?page)[==
+Another pause on the line. Longer this time.
+
+"And then she said he reached down and rolled her over."
+
+(click: ?page)[==
+Saul stares at the Statue of Liberty through the window.
+
+*He reached down and rolled her over.*
+
+After everything. After all the inches Walt has been sliding in one direction, he stopped at the last one.
+
+Saul doesn't know what to do with that. He files it. He'll figure it out later.
+
+"Come to the office. Bring Jane. Don't call Walt yet."
+
+[[The Office Meeting - Jane Alive]]
+
+
+:: The Office Meeting - Jane Alive {"position":"300,2050","size":"100,100"}
+Jesse and Jane come in looking like they haven't slept.
+
+Jane has bruises under her eyes. She sits straight anyway.
+
+Saul looks at her for a long moment. She looks back.
+
+"Thank you for coming in."
+
+"You're Jesse's lawyer?"
+
+"I'm Jesse's *everything* at this point. Lawyer, accountant, crisis management, spiritual advisor."
+
+(click: ?page)[==
+He lays it out. Walt's operation is growing. Gus Fring is circling. The DEA is getting closer. This is the part of the roller coaster where you can still see the platform.
+
+"You have a window," Saul says. "Both of you. You leave now, while the window's open, you can have a life that isn't this."
+
+(click: ?page)[==
+Jesse looks at Jane. Jane looks at Jesse.
+
+"What about Mr. White?" Jesse asks.
+
+### [DECISION 1] — What do you tell Jesse about Walt?
+
+[[Tell Jesse Walt Saved Jane - Jane Alive]]
+[[Don't Tell Jesse - Jane Alive]]
+
+
+:: Don't Tell Jesse - Jane Alive {"position":"150,2225","size":"100,100"}
+"Walt's not your problem anymore," Saul says. "He made his choices. You make yours."
+
+(click: ?page)[==
+Jesse doesn't look satisfied. But he nods.
+
+Jane squeezes his hand.
+
+"Okay," Jesse says. "Okay. So how do we do this?"
+
+(click: ?page)[==
+Saul starts making calls.
+
+[[Planning the Exit - Jane Alive]]
+
+
+:: Tell Jesse Walt Saved Jane - Jane Alive {"position":"450,2225","size":"100,100"}
+Saul sits back.
+
+"He was there. In your apartment. He saw what was happening and he — he rolled her over."
+
+Jesse stares.
+
+"He saved her."
+
+(click: ?page)[==
+The silence in the room is thick.
+
+Jesse looks at the table. Something moves across his face — complicated, ugly, honest.
+
+"Why?"
+
+"I don't know. Maybe he's not as far gone as either of us thought."
+
+(click: ?page)[==
+Jane is very still. Then: "What happens to him?"
+
+"That," Saul says carefully, "is going to be up to him."
+
+[[Planning the Exit - Jane Alive]]
+
+
+:: Planning the Exit - Jane Alive {"position":"300,2400","size":"100,100"}
+Saul knows a guy. He always knows a guy.
+
+New names. New state. A car that runs and can't be traced.
+
+The problem is Walt.
+
+Walt is still in it. And Walt knows everything — every cook site, every contact, every number. If Walt decides Jesse leaving is a threat, it becomes one.
+
+(click: ?page)[==
+"You're going to need to talk to him," Saul says. "Tell him you're out. You don't ask. You tell him."
+
+Jesse looks at the door like it's the last door he ever wants to walk through.
+
+### [DECISION 2] — How does Jesse approach Walt?
+
+[[Jesse Confronts Walt Directly - Jane Alive]]
+[[Jesse Sends Walt a Message Through Saul - Jane Alive]]
+
+
+:: Jesse Sends Walt a Message Through Saul - Jane Alive {"position":"150,2575","size":"100,100"}
+Saul calls Walt.
+
+He keeps it simple. Jesse's done. He's going somewhere Walt can't follow. There's no negotiation.
+
+(click: ?page)[==
+Walt is quiet for a long time.
+
+"Is he safe?"
+
+"He will be."
+
+Another long pause.
+
+"...okay."
+
+(click: ?page)[==
+It isn't forgiveness. It isn't resolution. It's just Walt saying *okay* into a phone and hanging up.
+
+But it's enough.
+
+[[Walt's Choice - Jane Alive]]
+
+
+:: Jesse Confronts Walt Directly - Jane Alive {"position":"450,2575","size":"100,100"}
+Jesse drives to Walt's house.
+
+It's early enough that the neighborhood is quiet. Walt answers the door in his robe. He looks older than Jesse remembers. Or maybe Jesse is just looking properly for the first time.
+
+(click: ?page)[==
+"I'm out," Jesse says. "I'm not asking. I'm telling you."
+
+Walt looks at him for a long time.
+
+"You sure?"
+
+"Yeah."
+
+(click: ?page)[==
+Walt nods slowly.
+
+"Where will you go?"
+
+"Somewhere that isn't here."
+
+(click: ?page)[==
+Walt looks past Jesse at the street. At the houses. At the ordinary world he's been steadily destroying from the inside.
+
+"Take care of yourself, Jesse."
+
+He goes back inside. The door closes.
+
+Jesse stands on the porch for a moment. Then he walks to his car and drives away and doesn't look back.
+
+[[Walt's Choice - Jane Alive]]
+
+
+:: Walt's Choice - Jane Alive {"position":"300,2750","size":"100,100"}
+Walt sits at the kitchen table for three hours after Jesse leaves.
+
+Skyler is at work. Flynn is at school. The house is the quietest place on earth.
+
+He thinks about Jesse. About the girl. About the moment in that apartment when his hand stopped in the air and then kept moving anyway, and what that means about who he still is, somewhere underneath everything he's become.
+
+(click: ?page)[==
+He thinks about Gus Fring waiting on the other end of a phone call that he hasn't made yet.
+
+He thinks about what happens if he makes it.
+
+### [DECISION 3] — What does Walt do?
+
+[[Walt Walks Away - Jane Alive Good Ending]]
+[[Walt Makes the Call - Jane Alive Bad Ending]]
+
+
+:: Walt Walks Away - Jane Alive Good Ending {"position":"150,2925","size":"100,100"}
+Walt doesn't make the call.
+
+He sits at the table until Skyler comes home, and when she walks in and sees him sitting there in the middle of the afternoon, she stops.
+
+"Walt?"
+
+"I want to stop," he says. "I need to tell you everything. And then I want to stop."
+
+(click: ?page)[==
+It takes four hours.
+
+Skyler doesn't say much. Asks a few questions. Cries once, quietly, with her back to him.
+
+She doesn't forgive him that day. Or the next week. Or the month after.
+
+But she doesn't leave.
+
+(click: ?page)[==
+Walt contacts the DEA through a lawyer — not Saul, someone else, someone who didn't know any names.
+
+He cooperates fully. He gives them the cook sites, the contacts, the money trails. Everything.
+
+In exchange: a reduced sentence, proximity to his family, access to a hospital.
+
+The cancer responds to treatment. Barely. But it does.
+
+(click: ?page)[==
+---
+
+*Walter White served four years.*
+
+*He came home to a smaller house and a family that was still learning how to be one.*
+
+*He never cooked again.*
+
+---
+
+(click: ?page)[==
+Jesse and Jane drove north.
+
+They crossed the state line on a Thursday afternoon with the windows down and a bad radio signal picking up a country station out of Colorado.
+
+Jane changed her name. Jesse didn't — he figured he'd earned the right to keep it.
+
+He learned to build furniture. He was good at it. The kind of good that comes from starting over five times before you get it right.
+
+(click: ?page)[==
+---
+
+*Saul Goodman closed his practice on a Friday.*
+
+*He drove west. Opened something smaller. Quieter. Took cases that didn't require a burner phone.*
+
+*He slept fine.*
+
+---
+
+(click: ?page)[==
+---
+
+*There are no winners in Albuquerque.*
+
+*But sometimes people choose to stop losing.*
+
+---
+
+**[END — GOOD PATH, ALL THREE]**
+
+
+:: Walt Makes the Call - Jane Alive Bad Ending {"position":"450,2925","size":"100,100"}
+Walt picks up the phone.
+
+He dials.
+
+Gus Fring picks up on the second ring, like he's been waiting.
+
+(click: ?page)[==
+*That's the thing about Walt. He always knows when he's making the wrong choice. He makes it anyway.*
+
+(click: ?page)[==
+The operation scales up.
+
+The laundry. The superlab. The product moving in industrial quantities across three states.
+
+Jesse and Jane are safe — they got out. Saul made sure of that.
+
+But Walt is still in it, deeper than ever, and the machine he built doesn't have a reverse gear.
+
+(click: ?page)[==
+Gus dies. The cartel burns. Hank gets close. Then Hank gets too close.
+
+Walt makes choices that can't be unmade. 
+
+He poisons a child to keep Jesse in line.
+
+He watches Hank die.
+
+He watches everything he built collapse anyway.
+
+(click: ?page)[==
+He dies in the superlab on a cold night in November.
+
+Shot. By a machine gun he built, triggered by a key fob, aimed at the same people he'd been slowly becoming.
+
+He gets to the floor and touches the equipment on the way down. Cold steel. Clean surfaces.
+
+He built something perfect, and it destroyed everything that mattered.
+
+(click: ?page)[==
+Saul ends up in Omaha.
+
+Managing a Cinnabon.
+
+He wears a different name. He watches the door.
+
+He thinks about Jesse and Jane sometimes. Hopes they made it somewhere good.
+
+He never finds out.
+
+(click: ?page)[==
+---
+
+*Jesse and Jane drove north and didn't look back.*
+
+*Walt chose the empire.*
+
+*The empire chose him back.*
+
+---
+
+**[END — BAD PATH]**
+
+
+/* =====================================================================
+   =========================== END ACT 3 ===============================
+   ====================== END OF FULL STORY ============================
+   ===================================================================== */

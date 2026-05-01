@@ -9,406 +9,809 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play No Winners in Albuquerque.</tw-noscript></noscript></tw-story>
-<tw-storydata name="No Winners in Albuquerque" startnode="2" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="51BBD6BA-779F-4FC2-8737-811006510819" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="StoryInit" tags="" position="" size="">(set: $karma to 0)
-(set: $janeLives to false)
+<tw-storydata name="No Winners in Albuquerque" startnode="2" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="51BBD6BA-779F-4FC2-8737-811006510819" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html,
+body {
+	min-height: 100%;
+	background: #000;
+}
+
+/*
+	Keep the character art locked to the browser viewport.
+	Do not put the image directly on tw-story, because tw-story grows
+	as more click-reveal text appears, which makes background-size: cover
+	recalculate and visually zoom the image.
+*/
+tw-story {
+	background-color: #000;
+	background-image: none !important;
+	min-height: 100vh;
+	position: relative;
+	isolation: isolate;
+}
+
+tw-story::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-position: center 12%;
+	background-size: cover;
+	transition: background-image 0.35s ease, opacity 0.35s ease, background-color 0.35s ease;
+	opacity: 1;
+}
+[data-bb-speaker] {
+	display: inline;
+}
 
 
-&lt;!-- ============================================================ --&gt;
-&lt;!--                        ACT 1 — JESSE                        --&gt;
-&lt;!-- ============================================================ --&gt;</tw-passagedata><tw-passagedata pid="2" name="other passage" tags="" position="700,400" size="100,100">It's morning.
-You're just now blinking awake.
-Jane's still sleeping next to you.
-Whenever you wake up next to her, you notice that she sounds kinda catlike with her little snores. A little snrrrrk, snrrrrk purring gently besides you. It's nice. Jane's cool.
+/* Keep all Harlowe content above the fixed background layer. */
+tw-story > * {
+	position: relative;
+	z-index: 1;
+}
 
-You are Jesse Pinkman, certified high school burnout, 26 and 5'9 in stocking feet, and co-producer of the finest scante this side of the border.
+tw-story[data-bb-bg="none"]::before,
+tw-story:not([data-bb-bg])::before,
+tw-story[data-bb-bg=""]::before {
+	background-image: none;
+	background-color: #000;
+}
 
-All this, and it's time to get up for the day.
+tw-story[data-bb-bg="jesse"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Jesse.jpg");
+}
+
+tw-story[data-bb-bg="jane"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Jane.jpg");
+}
+
+tw-story[data-bb-bg="walt"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Walter.jpg");
+}
+
+tw-story[data-bb-bg="heisenberg"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Heisenberg.jpg");
+}
+
+tw-story[data-bb-bg="saul"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Saul.jpg");
+}
+
+tw-story[data-bb-bg="combo"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Combo.jpg");
+}
+
+tw-story[data-bb-bg="mike"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Mike.jpg");
+}
+
+tw-story[data-bb-bg="badger"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Badger.jpg");
+}
+
+tw-story[data-bb-bg="donald"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Donald.jpg");
+}
+
+tw-story[data-bb-bg="pete"]::before {
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Skinny%20Pete.jpg");
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">(function () {
+	var scrollTimer = null;
+	var lastCenteredSignature = "";
+
+	function getCurrentPassage() {
+		var passages = document.querySelectorAll("tw-passage");
+		return passages.length ? passages[passages.length - 1] : null;
+	}
+
+	function isVisibleElement(node) {
+		if (!node || !node.getBoundingClientRect) { return false; }
+		var rect = node.getBoundingClientRect();
+		var style = window.getComputedStyle(node);
+		return rect.width > 0 && rect.height > 0 && style.display !== "none" && style.visibility !== "hidden";
+	}
+
+	function getPassageTagBg(passage) {
+		var bg = "none";
+		if (passage) {
+			var raw = passage.getAttribute("tags") || "";
+			var tags = raw.trim().split(/\s+/);
+			for (var i = 0; i < tags.length; i++) {
+				if (tags[i].indexOf("bb-bg-") === 0) {
+					bg = tags[i].slice("bb-bg-".length) || "none";
+					break;
+				}
+			}
+		}
+		return bg;
+	}
+
+	function getLatestInlineBg(passage) {
+		if (!passage) { return ""; }
+		var markers = passage.querySelectorAll("[data-bb-speaker]");
+		for (var i = markers.length - 1; i >= 0; i--) {
+			var marker = markers[i];
+			if (isVisibleElement(marker)) {
+				return marker.getAttribute("data-bb-speaker") || "";
+			}
+		}
+		return "";
+	}
+
+	function syncCharacterBg() {
+		var story = document.querySelector("tw-story");
+		if (!story) { return; }
+
+		var passage = getCurrentPassage();
+		var bg = getLatestInlineBg(passage) || getPassageTagBg(passage) || "none";
+
+		story.setAttribute("data-bb-bg", bg);
+	}
+	function getLastVisibleElement(root) {
+		if (!root) { return null; }
+
+		var nodes = root.querySelectorAll("tw-hook, tw-expression, tw-link, a, p, div, span");
+		for (var i = nodes.length - 1; i >= 0; i--) {
+			var node = nodes[i];
+			var rect = node.getBoundingClientRect();
+			var text = (node.textContent || "").trim();
+			if (text && rect.width > 0 && rect.height > 0) {
+				return node;
+			}
+		}
+
+		return root;
+	}
+
+	function centerLatestContent() {
+		var passage = getCurrentPassage();
+		if (!passage) { return; }
+
+		var target = getLastVisibleElement(passage);
+		if (!target) { return; }
+
+		var rect = target.getBoundingClientRect();
+		if (rect.height <= 0) { return; }
+
+		var signature = passage.textContent.length + "|" + Math.round(rect.top + window.pageYOffset) + "|" + Math.round(rect.height);
+		if (signature === lastCenteredSignature) { return; }
+		lastCenteredSignature = signature;
+
+		var targetMiddle = rect.top + window.pageYOffset + (rect.height / 2);
+		var targetScroll = Math.max(0, targetMiddle - (window.innerHeight / 2));
+
+		window.scrollTo({
+			top: targetScroll,
+			behavior: "smooth"
+		});
+	}
+
+	function scheduleUpdate() {
+		window.requestAnimationFrame(syncCharacterBg);
+
+		if (scrollTimer) {
+			window.clearTimeout(scrollTimer);
+		}
+
+		// Harlowe click-reveal content is inserted after the click handler finishes,
+		// so a tiny delay makes the scroll target the newly revealed sentence.
+		scrollTimer = window.setTimeout(function () {
+			window.requestAnimationFrame(centerLatestContent);
+		}, 40);
+	}
+
+	function init() {
+		syncCharacterBg();
+		centerLatestContent();
+
+		var root = document.querySelector("tw-story") || document.body;
+		var mo = new MutationObserver(scheduleUpdate);
+		mo.observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ["tags"] });
+
+		document.addEventListener("click", scheduleUpdate, true);
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", init);
+	} else {
+		init();
+	}
+})();
+
+
+<!-- ============================================================ -->
+<!--                        ACT 1 — JESSE                        -->
+<!-- ============================================================ --></script><tw-passagedata pid="1" name="StoryInit" tags="" position="0,0" size="100,100">(set: $karma to 0)
+(set: $janeLives to false)</tw-passagedata><tw-passagedata pid="2" name="other passage" tags="bb-bg-jesse" position="700,400" size="100,100">It&#39;s morning.
+(click: ?page)[==
+You&#39;re just now blinking awake.
+(click: ?page)[==
+Jane&#39;s still sleeping next to you.
+(click: ?page)[==
+Whenever you wake up next to her, you notice that she sounds kinda catlike with her little snores. A little snrrrrk, snrrrrk purring gently besides you. It&#39;s nice. Jane&#39;s cool.
+
+(click: ?page)[==
+You are Jesse Pinkman, certified high school burnout, 26 and 5&#39;9 in stocking feet, and co-producer of the finest scante this side of the border.
+
+(click: ?page)[==
+All this, and it&#39;s time to get up for the day.
 
 [[Light a joint]]
-[[Not right now]]</tw-passagedata><tw-passagedata pid="3" name="Light a joint" tags="" position="775,525" size="100,100">Nothing like that morning joint.
+[[Not right now]]</tw-passagedata><tw-passagedata pid="3" name="Light a joint" tags="bb-bg-jesse" position="775,525" size="100,100">Nothing like that morning joint.
 
-[[Is Jane up?]]</tw-passagedata><tw-passagedata pid="4" name="Not right now" tags="" position="600,525" size="100,100">Not right now?
+[[Is Jane up?]]</tw-passagedata><tw-passagedata pid="4" name="Not right now" tags="bb-bg-jesse" position="600,525" size="100,100">Not right now?
+(click: ?page)[==
 The hell… what do I got to do?
-That's pretty weird. No matter how shitty the day ends up being, a joint always makes the morning nice.
-Once you see the rolls from last night, you kinda realize you weren't really serious about not smoking any. It's been like years since you had to wake up without one.
+(click: ?page)[==
+That&#39;s pretty weird. No matter how shitty the day ends up being, a joint always makes the morning nice.
+(click: ?page)[==
+Once you see the rolls from last night, you kinda realize you weren&#39;t really serious about not smoking any. It&#39;s been like years since you had to wake up without one.
 
-[[Is Jane up?]]</tw-passagedata><tw-passagedata pid="5" name="Is Jane up?" tags="" position="700,650" size="100,100">Jane stirs and wakes up. She doesn't realize what's happening for a few seconds, but then jolts.
+[[Is Jane up?]]</tw-passagedata><tw-passagedata pid="5" name="Is Jane up?" tags="bb-bg-jane" position="700,650" size="100,100">Jane stirs and wakes up. She doesn&#39;t realize what&#39;s happening for a few seconds, but then jolts.
 
-"Dude! Don't smoke here! The smell gets in the walls!"
-Right. You're still her tenant, technically.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;Dude! Don&#39;t smoke here! The smell gets in the walls!&quot;&lt;/span&gt;
+(click: ?page)[==
+Right. You&#39;re still her tenant, technically.
 
-"Right, I'm still your tenant, technically."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Right, I&#39;m still your tenant, technically.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 You keep the joint ablaze.
 
+(click: ?page)[==
 She looks at you crossly, then settles back down.
-"...can I have some?"
-"What about your, uh…" You gesture toward her AA 90-day chip.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;...can I have some?&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;What about your, uh…&quot; You gesture toward her AA 90-day chip.&lt;/span&gt;
 
-That's what stopped her last time, and all the other times.
+(click: ?page)[==
+That&#39;s what stopped her last time, and all the other times.
 
-"A lot of the AA people end up using grass. It's better for you than being hopped on cigarettes, they say.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;A lot of the AA people end up using grass. It&#39;s better for you than being hopped on cigarettes, they say.&lt;/span&gt;
 
-"...Hey, have you ever tried to stop smoking weed?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;...Hey, have you ever tried to stop smoking weed?&quot;&lt;/span&gt;
 
 [[Honestly?]]
 
-[[I don't think so, haha.]]</tw-passagedata><tw-passagedata pid="6" name="Honestly?" tags="" position="600,775" size="100,100">"Yeah, I've tried to stop before."
-"...really…"
-"Actually, man, you're making me remember this funny story."
+[[I don&#39;t think so, haha.]]</tw-passagedata><tw-passagedata pid="6" name="Honestly?" tags="bb-bg-jesse" position="600,775" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Yeah, I&#39;ve tried to stop before.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;...really…&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Actually, man, you&#39;re making me remember this funny story.&quot;&lt;/span&gt;
+(click: ?page)[==
 You take a long drag on the joint.
+(click: ?page)[==
 No matter how many times you do it, the smoke still just kind of feels wrong sliding down your throat.
-Like you're breaking a rule.
-I like this feeling somedays, but somedays it's just another boring thing about my life.
+(click: ?page)[==
+Like you&#39;re breaking a rule.
+(click: ?page)[==
+I like this feeling somedays, but somedays it&#39;s just another boring thing about my life.
 
 
-[[That time in high school..]]</tw-passagedata><tw-passagedata pid="7" name="I don&#x27;t think so, haha." tags="" position="750,775" size="100,100">"I dunno, I mean, I've never really tried to quit smoking. It's fun and I feel like it still gets me really high. Like, it still has that psychological effect."
-"...yeah."
-"I could take it or leave it though, man. I'd just get rid of my smoking stuff."
-"Okay, what happens when that Badger guy asks you to roll one for him?"
-"I mean, it'd sound dumb, but I'd just tell him I quit."
+[[That time in high school..]]</tw-passagedata><tw-passagedata pid="7" name="I don&#39;t think so, haha." tags="bb-bg-jane" position="750,775" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;I dunno, I mean, I&#39;ve never really tried to quit smoking. It&#39;s fun and I feel like it still gets me really high. Like, it still has that psychological effect.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;...yeah.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;I could take it or leave it though, man. I&#39;d just get rid of my smoking stuff.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;Okay, what happens when that Badger guy asks you to roll one for him?&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;I mean, it&#39;d sound dumb, but I&#39;d just tell him I quit.&quot;&lt;/span&gt;
+(click: ?page)[==
 You hand her the joint.
-"Do you really think it's as easy as making the right choice every time?
-You know, sometimes you NEED something and there's no choice about it."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;Do you really think it&#39;s as easy as making the right choice every time?&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;You know, sometimes you NEED something and there&#39;s no choice about it.&quot;&lt;/span&gt;
+(click: ?page)[==
 She looks at the joint between her fingers.
-"And the heroin, the black tar stuff… well, it's kinda… sounds bad saying I want to do it bad…but…"
-"I've seen what the H did to Skinny Pete. God. Wendy and her teeth. Jesus. It's good you're off that stuff."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;And the heroin, the black tar stuff… well, it&#39;s kinda… sounds bad saying I want to do it bad…but…&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;I&#39;ve seen what the H did to Skinny Pete. God. Wendy and her teeth. Jesus. It&#39;s good you&#39;re off that stuff.&quot;&lt;/span&gt;
+(click: ?page)[==
 She takes a few puffs, makes a grimace, and then gets up.
 
-[[Anyway...]]</tw-passagedata><tw-passagedata pid="8" name="That time in high school.." tags="" position="600,925" size="100,100">&lt;audio controls autoplay loop&gt;
-  &lt;source src="boxmonologue.mp3" type="audio/mpeg"&gt;
+[[Anyway...]]</tw-passagedata><tw-passagedata pid="8" name="That time in high school.." tags="bb-bg-jesse" position="600,925" size="100,100">&lt;audio controls autoplay loop&gt;
+  &lt;source src=&quot;boxmonologue.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
 &lt;/audio&gt;
 
 I took this, um, vo-tech class in high school,
-woodworking. Well, I took a lot of vo-tech classes 'cause it was just a big jerk-off. But
+(click: ?page)[==
+woodworking. Well, I took a lot of vo-tech classes &#39;cause it was just a big jerk-off. But
+(click: ?page)[==
 this one time, I had this teacher, name of, um,
+(click: ?page)[==
 Mr., uh, Mr. Pike.
+(click: ?page)[==
 Guess he was, like, a Marine or something before he got old. He was hard of hearing. My, uh, my project for his class was to make this,
+(click: ?page)[==
 um, wooden box, you know, like a small, um...
+(click: ?page)[==
 Just like a, like a box, you know, to put stuff in.
-So I, I wanted to get the thing done as fast as possible. Um, I figured I could cut classes for the rest of the semester and he couldn't flunk me as long as I, you know, made the thing.
+(click: ?page)[==
+So I, I wanted to get the thing done as fast as possible. Um, I figured I could cut classes for the rest of the semester and he couldn&#39;t flunk me as long as I, you know, made the thing.
+(click: ?page)[==
 So I finished it in a couple days, and it looked... It was pretty lame, but it worked, you know, for putting stuff in or whatnot.
+(click: ?page)[==
 So when I, uh, showed it to Mr. Pike
+(click: ?page)[==
 for my grade,
+(click: ?page)[==
 uh, he looked at it and said,
-"Is that the best you can do?"
-At first I thought to myself, "Hell yeah, bitch. Now give me a D and shut up so I can go blaze one with my boys."
-I don't know. Maybe it was the way he said it, but
-it was like he, he wasn't exactly saying it sucked. He was just asking me honestly, "Is,
-is that all you got?"
+(click: ?page)[==
+&quot;Is that the best you can do?&quot;
+(click: ?page)[==
+At first I thought to myself, &quot;Hell yeah, bitch. Now give me a D and shut up so I can go blaze one with my boys.&quot;
+(click: ?page)[==
+I don&#39;t know. Maybe it was the way he said it, but
+(click: ?page)[==
+it was like he, he wasn&#39;t exactly saying it sucked. He was just asking me honestly, &quot;Is,
+(click: ?page)[==
+is that all you got?&quot;
+(click: ?page)[==
 And for some reason, I thought to myself,
-"Yeah, man, I, I can do better." So I started from scratch. I made another, then another, and by the end of the semester, by, like, box number five,
+(click: ?page)[==
+&quot;Yeah, man, I, I can do better.&quot; So I started from scratch. I made another, then another, and by the end of the semester, by, like, box number five,
+(click: ?page)[==
 I had built this thing.
+(click: ?page)[==
 You should have seen it. It was insane.
+(click: ?page)[==
 I mean, I built it out of Peruvian walnut with inlaid zebrawood.
+(click: ?page)[==
 It was fitted with pegs, no screws. I sanded it for days until
+(click: ?page)[==
 it was smooth as glass. Then I rubbed all the wood with tung oil so it was rich and dark.
+(click: ?page)[==
 It even smelled good. You know, you put your nose in it and breathed in.
+(click: ?page)[==
 It was... It was perfect.
+(click: ?page)[==
 I, um,
+(click: ?page)[==
 I gave it to my mom.
-You know, I didn't give the box to my mom.
+(click: ?page)[==
+You know, I didn&#39;t give the box to my mom.
+(click: ?page)[==
 I traded it for an ounce of weed.
-[[Anyway...]]</tw-passagedata><tw-passagedata pid="9" name="Anyway..." tags="" position="700,1050" size="100,100">"Yknow, just put the joint out."
+[[Anyway...]]</tw-passagedata><tw-passagedata pid="9" name="Anyway..." tags="bb-bg-jesse" position="700,1050" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Yknow, just put the joint out.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 She gets up and starts dressing.
 
-"What are you up to today?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;What are you up to today?&quot;&lt;/span&gt;
 
+(click: ?page)[==
 You realize you gotta meet up with Mr. White.
 
-[[Go meet up with Mr. White]]</tw-passagedata><tw-passagedata pid="10" name="Go meet up with Mr. White" tags="" position="500,1200" size="100,100">Albuquerque morning already feels too bright.
+[[Go meet up with Mr. White]]</tw-passagedata><tw-passagedata pid="10" name="Go meet up with Mr. White" tags="bb-bg-jesse" position="500,1200" size="100,100">Albuquerque morning already feels too bright.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/+1.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/1.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Everything looks bleached out.
+(click: ?page)[==
 As you head toward your car, somebody yells:
-"Yo! Pinkman!"
-Normally someone shouting your last name out here means you're about to get popped, but that voice...
-Combo is standing half out the window of his car, grinning like an idiot.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;&quot;Yo! Pinkman!&quot;&lt;/span&gt;
+(click: ?page)[==
+Normally someone shouting your last name out here means you&#39;re about to get popped, but that voice...
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;Combo is standing half out the window of his car, grinning like an idiot.&lt;/span&gt;
 
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/2.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/2.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-[[Is that a cake box?]]</tw-passagedata><tw-passagedata pid="11" name="Is that a cake box?" tags="" position="675,1250" size="100,100">"Are you carrying any scante right now? You're supposed to be working!"
-"Nah man, I just gotta get this stupid ass cake over to my momma's fridge."
-"Lil mom's boy… what kinda cake is it? let me have some!"
-"It's for her birthday, assbag."
+[[Is that a cake box?]]</tw-passagedata><tw-passagedata pid="11" name="Is that a cake box?" tags="bb-bg-combo" position="675,1250" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Are you carrying any scante right now? You&#39;re supposed to be working!&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;&quot;Nah man, I just gotta get this stupid ass cake over to my momma&#39;s fridge.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Lil mom&#39;s boy… what kinda cake is it? let me have some!&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;&quot;It&#39;s for her birthday, assbag.&quot;&lt;/span&gt;
+(click: ?page)[==
 Combo laughs.
+(click: ?page)[==
 Same dumb laugh he always has.
+(click: ?page)[==
 Like every joke is the funniest thing he ever heard.
+(click: ?page)[==
 He pats the box carefully.
-"Three milk cake, man."
-"Tres leches?"
-"Yeah, whatever. Mexican milk cake."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;&quot;Three milk cake, man.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Tres leches?&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;&quot;Yeah, whatever. Mexican milk cake.&quot;&lt;/span&gt;
+(click: ?page)[==
 You shake your head.
-"Dude you look weirdly happy carrying that thing."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Dude you look weirdly happy carrying that thing.&quot;&lt;/span&gt;
+(click: ?page)[==
 Combo shrugs.
+(click: ?page)[==
 For all the stupid stuff Combo says, he always shows up for his mama.
+(click: ?page)[==
 You remember the wooden box.
+(click: ?page)[==
 The ounce of weed.
+(click: ?page)[==
 The box.
+(click: ?page)[==
 His mom running her hand across the lid like it was expensive.
+(click: ?page)[==
 Like it mattered.
+(click: ?page)[==
 Ms. Ortega always treated you like you were worth feeding.
+(click: ?page)[==
 Tamales.
+(click: ?page)[==
 Sweet bread.
+(click: ?page)[==
 Real food.
+(click: ?page)[==
 Not frozen garbage or stale cereal.
+(click: ?page)[==
 Way nicer than your own house ever felt.
+(click: ?page)[==
 Combo points at you.
-"See you later homes, we gotta hit the club sometime. Unless that Jane ho keepin you home haha"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;combo&quot;&gt;&quot;See you later homes, we gotta hit the club sometime. Unless that Jane ho keepin you home haha&quot;&lt;/span&gt;
 
-[[hahahahaha]]</tw-passagedata><tw-passagedata pid="12" name="hahahahaha" tags="" position="700,1375" size="100,100">"Hey, whatever, man."
+[[hahahahaha]]</tw-passagedata><tw-passagedata pid="12" name="hahahahaha" tags="bb-bg-jesse" position="700,1375" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Hey, whatever, man.&quot;&lt;/span&gt;
 
-"YOU just need to keep those junkies in line. They still believe that you killed that other junkie."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;YOU just need to keep those junkies in line. They still believe that you killed that other junkie.&quot;&lt;/span&gt;
 
-"Yeah, man. Alright, man."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Yeah, man. Alright, man.&quot;&lt;/span&gt;
 
-It always ends up like this with Mr. White. He's so anal.
+(click: ?page)[==
+It always ends up like this with Mr. White. He&#39;s so anal.
+(click: ?page)[==
 Ring ring ring.
-"Yo wassup Pete. Yo, chill out…"
-The way Pete is talking, you can barely understand. What is he talking about?
-"Is that Skinny Pete? Let me see that."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Yo wassup Pete. Yo, chill out…&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;pete&quot;&gt;The way Pete is talking, you can barely understand. What is he talking about?&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Is that Skinny Pete? Let me see that.&quot;&lt;/span&gt;
+(click: ?page)[==
 The phone slips out of your hands. What the hell was Pete talking about?
-"Pete? What's that? Combo? Who the hell is Combo? No, Jesse is… he's doing something."
-"Did he have product on him? You quit? What do you mean, you quit. Hey, come to Jesse's flat and we'll talk, alright?
-No, I don't know who killed Combo! Just COME and we can talk about things, okay?"
-There's a lump in your throat but you don't know why.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Pete? What&#39;s that? Combo? Who the hell is Combo? No, Jesse is… he&#39;s doing something.&quot;&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Did he have product on him? You quit? What do you mean, you quit. Hey, come to Jesse&#39;s flat and we&#39;ll talk, alright?&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;No, I don&#39;t know who killed Combo! Just COME and we can talk about things, okay?&quot;&lt;/span&gt;
+(click: ?page)[==
+There&#39;s a lump in your throat but you don&#39;t know why.
+(click: ?page)[==
 Swallow the spit.
-It won't go down.
-Combo? Didn't you just see him on your way here?
-"Pete? Peter? Dammit! Jesse, help me out here."
-That's weird… and he was holding a cake.
+(click: ?page)[==
+It won&#39;t go down.
+(click: ?page)[==
+Combo? Didn&#39;t you just see him on your way here?
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Pete? Peter? Dammit! Jesse, help me out here.&quot;&lt;/span&gt;
+(click: ?page)[==
+That&#39;s weird… and he was holding a cake.
+(click: ?page)[==
 A cake?
-"Jesse."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Jesse.&quot;&lt;/span&gt;
+(click: ?page)[==
 Why the hell did he have a cake?
-"Jesse!"
-Oh, duh… 'cause tomorrow is Ms. Ortega's birthday.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Jesse!&quot;&lt;/span&gt;
+(click: ?page)[==
+Oh, duh… &#39;cause tomorrow is Ms. Ortega&#39;s birthday.
 
 &lt;!-- ★ CUTSCENE 1 marker — see notes at bottom of file ★ --&gt;
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/3.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/3.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-[[— DECISION 1 — The Bag]]</tw-passagedata><tw-passagedata pid="13" name="— DECISION 1 — The Bag" tags="" position="700,1525" size="100,100">Three days after Combo.
+[[— DECISION 1 — The Bag]]</tw-passagedata><tw-passagedata pid="13" name="— DECISION 1 — The Bag" tags="bb-bg-jesse" position="700,1525" size="100,100">Three days after Combo.
 
-Jesse's apartment. The bag of blue is on the coffee table where he left it. Skinny Pete's been calling — the Ortega brothers want a sample meet tonight and Jesse is the one who has to show up and look like he has his shit together.
+(click: ?page)[==
+Jesse&#39;s apartment. The bag of blue is on the coffee table where he left it. Skinny Pete&#39;s been calling — the Ortega brothers want a sample meet tonight and Jesse is the one who has to show up and look like he has his shit together.
 
-He's been clean for three days. His hands are shaking.
+(click: ?page)[==
+He&#39;s been clean for three days. His hands are shaking.
 
-The bag just sits there. It doesn't do anything. It doesn't have to.
+(click: ?page)[==
+The bag just sits there. It doesn&#39;t do anything. It doesn&#39;t have to.
 
 [[Use it — KP -2]]
-[[Leave it — KP +2]]</tw-passagedata><tw-passagedata pid="14" name="Use it — KP -2" tags="" position="575,1650" size="100,100">(set: $karma to $karma - 2)
+[[Leave it — KP +2]]</tw-passagedata><tw-passagedata pid="14" name="Use it — KP -2" tags="bb-bg-jesse" position="575,1650" size="100,100">(set: $karma to $karma - 2)
 You open the bag.
 
+(click: ?page)[==
 The meet goes smooth. The Ortegas are impressed. Jesse keeps his voice even the whole time.
+(click: ?page)[==
 When he gets home Jane is already asleep. He stands in the doorway and watches her breathe for a while.
 
-She doesn't know. And he isn't going to tell her.
+(click: ?page)[==
+She doesn&#39;t know. And he isn&#39;t going to tell her.
 
-[[— DECISION 2 — The Territory Call]]</tw-passagedata><tw-passagedata pid="15" name="Leave it — KP +2" tags="" position="825,1650" size="100,100">(set: $karma to $karma + 2)
-You put the bag in the kitchen drawer. Walk away. Don't look back.
+[[— DECISION 2 — The Territory Call]]</tw-passagedata><tw-passagedata pid="15" name="Leave it — KP +2" tags="bb-bg-jesse" position="825,1650" size="100,100">(set: $karma to $karma + 2)
+You put the bag in the kitchen drawer. Walk away. Don&#39;t look back.
 
-The meet is harder. Jesse's hands sweat through the handshake. But he holds it together.
+(click: ?page)[==
+The meet is harder. Jesse&#39;s hands sweat through the handshake. But he holds it together.
+(click: ?page)[==
 When he gets home Jane is awake on the couch, reading. She looks up and smiles when she sees him.
 
-She can tell something's different. She doesn't ask what.
+(click: ?page)[==
+She can tell something&#39;s different. She doesn&#39;t ask what.
 
-[[— DECISION 2 — The Territory Call]]</tw-passagedata><tw-passagedata pid="16" name="— DECISION 2 — The Territory Call" tags="" position="700,1775" size="100,100">A parking lot, late. Jesse, Skinny Pete, and Badger count cash on the hood of Pete's car.
+[[— DECISION 2 — The Territory Call]]</tw-passagedata><tw-passagedata pid="16" name="— DECISION 2 — The Territory Call" tags="bb-bg-jesse" position="700,1775" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;A parking lot, late. Jesse, Skinny Pete, and Badger count cash on the hood of Pete&#39;s car.&lt;/span&gt;
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/4.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/4.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-Pete tells Jesse that Mr. White wants to push into Salamanca territory. They all look at Jesse — he's the one with the Walt connection. If this goes sideways it goes sideways on all of them.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;pete&quot;&gt;Pete tells Jesse that Mr. White wants to push into Salamanca territory. They all look at Jesse — he&#39;s the one with the Walt connection. If this goes sideways it goes sideways on all of them.&lt;/span&gt;
 
-[[Back Walt's Plan — KP -2]]
-[[Push Back — KP +2]]</tw-passagedata><tw-passagedata pid="17" name="Back Walt&#x27;s Plan — KP -2" tags="" position="575,1900" size="100,100">(set: $karma to $karma - 2)
-"Walt knows what he's doing. We trust the plan."
+[[Back Walt&#39;s Plan — KP -2]]
+[[Push Back — KP +2]]</tw-passagedata><tw-passagedata pid="17" name="Back Walt&#39;s Plan — KP -2" tags="bb-bg-jesse" position="575,1900" size="100,100">(set: $karma to $karma - 2)
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Walt knows what he&#39;s doing. We trust the plan.&quot;&lt;/span&gt;
 
-Pete looks uncomfortable. Badger stares at the ground.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;badger&quot;&gt;Pete looks uncomfortable. Badger stares at the ground.&lt;/span&gt;
 
+(click: ?page)[==
 Something shifts in how they look at Jesse that night. He notices it and files it.
-On the drive home he tells himself Walt's been right about everything so far.
+(click: ?page)[==
+On the drive home he tells himself Walt&#39;s been right about everything so far.
 
+(click: ?page)[==
 He almost believes it.
 
-[[— DECISION 3 — The Dinner]]</tw-passagedata><tw-passagedata pid="18" name="Push Back — KP +2" tags="" position="825,1900" size="100,100">(set: $karma to $karma + 2)
-"I'll talk to Walt. We keep it small or I'm out."
+[[— DECISION 3 — The Dinner]]</tw-passagedata><tw-passagedata pid="18" name="Push Back — KP +2" tags="bb-bg-jesse" position="825,1900" size="100,100">(set: $karma to $karma + 2)
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;I&#39;ll talk to Walt. We keep it small or I&#39;m out.&quot;&lt;/span&gt;
 
-Pete nods, relieved. Badger fist bumps him.
-Jesse calls Walt that night. Walt listens to everything he says and then dismisses every single point, calmly, like a man explaining long division to a child.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;badger&quot;&gt;Pete nods, relieved. Badger fist bumps him.&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;Jesse calls Walt that night. Walt listens to everything he says and then dismisses every single point, calmly, like a man explaining long division to a child.&lt;/span&gt;
 
-Jesse stays on the line another two minutes saying "yeah" until he can hang up without it being weird.
+(click: ?page)[==
+Jesse stays on the line another two minutes saying &quot;yeah&quot; until he can hang up without it being weird.
 
+(click: ?page)[==
 Something has started to shift.
 
-[[— DECISION 3 — The Dinner]]</tw-passagedata><tw-passagedata pid="19" name="— DECISION 3 — The Dinner" tags="" position="700,2025" size="100,100">Two weeks later. Jane's apartment, early Sunday.
+[[— DECISION 3 — The Dinner]]</tw-passagedata><tw-passagedata pid="19" name="— DECISION 3 — The Dinner" tags="bb-bg-jane" position="700,2025" size="100,100">Two weeks later. &lt;span data-bb-speaker=&quot;jane&quot;&gt;Jane&#39;s apartment, early Sunday.&lt;/span&gt;
 
-She asks Jesse to come to dinner with her dad. Donald Margolis — air traffic controller, recovering alcoholic himself, man who asks careful questions. Jesse can feel the table already. The pauses. The way Donald would look at him.
+(click: ?page)[==
+She asks Jesse to come to dinner with her dad. &lt;span data-bb-speaker=&quot;donald&quot;&gt;Donald Margolis — air traffic controller, recovering alcoholic himself, man who asks careful questions. Jesse can feel the table already.&lt;/span&gt; The pauses. The way Donald would look at him.
 
-Jane isn't pressuring him. She's just asking. She looks at him the way she always does, like she already knows the answer and she's just waiting for him to catch up.
+(click: ?page)[==
+Jane isn&#39;t pressuring him. She&#39;s just asking. She looks at him the way she always does, like she already knows the answer and she&#39;s just waiting for him to catch up.
 
-[["I'll be there." — KP +3]]
-[["I can't. I got stuff with Walt." — KP -3]]</tw-passagedata><tw-passagedata pid="20" name="&quot;I&#x27;ll be there.&quot; — KP +3" tags="" position="825,2150" size="100,100">(set: $karma to $karma + 3)
-Sunday dinner. Pot roast. Donald asks Jesse how he spends his time.
+[[&quot;I&#39;ll be there.&quot; — KP +3]]
+[[&quot;I can&#39;t. I got stuff with Walt.&quot; — KP -3]]</tw-passagedata><tw-passagedata pid="20" name="&quot;I&#39;ll be there.&quot; — KP +3" tags="bb-bg-donald" position="825,2150" size="100,100">(set: $karma to $karma + 3)
+&lt;span data-bb-speaker=&quot;donald&quot;&gt;Sunday dinner. Pot roast. Donald asks Jesse how he spends his time.&lt;/span&gt;
 
-Jesse says distribution. Donald nods like that could mean anything.
-It's awkward. Jesse says the wrong things twice and the right thing once, by accident. Donald doesn't fully trust him. But he doesn't write him off either.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;donald&quot;&gt;Jesse says distribution. Donald nods like that could mean anything.&lt;/span&gt;
+(click: ?page)[==
+It&#39;s awkward. Jesse says the wrong things twice and the right thing once, by accident. Donald doesn&#39;t fully trust him. But he doesn&#39;t write him off either.
 
-On the drive home Jane says: "He liked you."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;On the drive home Jane says: &quot;He liked you.&quot;&lt;/span&gt;
 
-Jesse doesn't say anything. But he keeps the window up so she can't see him smiling.
+(click: ?page)[==
+Jesse doesn&#39;t say anything. But he keeps the window up so she can&#39;t see him smiling.
 
-[[— Act 1 End]]</tw-passagedata><tw-passagedata pid="21" name="&quot;I can&#x27;t. I got stuff with Walt.&quot; — KP -3" tags="" position="575,2150" size="100,100">(set: $karma to $karma - 3)
+[[— Act 1 End]]</tw-passagedata><tw-passagedata pid="21" name="&quot;I can&#39;t. I got stuff with Walt.&quot; — KP -3" tags="bb-bg-jesse" position="575,2150" size="100,100">(set: $karma to $karma - 3)
 Jane stops talking about her dad after that.
 
+(click: ?page)[==
 Stops talking about a lot of things.
-A week later Jesse finds an old kit under the bathroom sink, tucked behind the cleaning supplies. He stares at it for a long time. He puts it back exactly where he found it. He doesn't say anything.
+(click: ?page)[==
+A week later Jesse finds an old kit under the bathroom sink, tucked behind the cleaning supplies. He stares at it for a long time. He puts it back exactly where he found it. He doesn&#39;t say anything.
 
-She doesn't say anything either.
+(click: ?page)[==
+She doesn&#39;t say anything either.
 
-[[— Act 1 End]]</tw-passagedata><tw-passagedata pid="22" name="— Act 1 End" tags="" position="700,2275" size="100,100">(if: $karma &gt;= 1)[
-  (go-to: "— ACT 2 — Walt — Good Path")
+[[— Act 1 End]]</tw-passagedata><tw-passagedata pid="22" name="— Act 1 End" tags="bb-bg-none" position="700,2275" size="100,100">(if: $karma &gt;= 1)[
+  (go-to: &quot;— ACT 2 — Walt — Good Path&quot;)
 ](else:)[
-  (go-to: "— ACT 2 — Walt — Bad Path")
+  (go-to: &quot;— ACT 2 — Walt — Bad Path&quot;)
 ]
 
 
 &lt;!-- ============================================================ --&gt;
 &lt;!--                       ACT 2 — WALT                          --&gt;
-&lt;!-- ============================================================ --&gt;</tw-passagedata><tw-passagedata pid="23" name="— ACT 2 — Walt — Good Path" tags="" position="700,2400" size="100,100">6:15 AM.
+&lt;!-- ============================================================ --&gt;</tw-passagedata><tw-passagedata pid="23" name="— ACT 2 — Walt — Good Path" tags="bb-bg-walt" position="700,2400" size="100,100">6:15 AM.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/5.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/5.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-Walter Hartwell White catalogs his body the way he catalogs everything — systematically, without sentiment. Left knee. The nausea that hasn't arrived yet but will. The particular quality of the morning light that he has started to associate with the first hour of chemo weeks.
+(click: ?page)[==
+Walter Hartwell White catalogs his body the way he catalogs everything — systematically, without sentiment. Left knee. The nausea that hasn&#39;t arrived yet but will. The particular quality of the morning light that he has started to associate with the first hour of chemo weeks.
 
-Skyler's side of the bed is empty. Flynn left early.
-He showers. Thinks about the cook schedule, then Jesse, then Jane — and notices that he's been avoiding saying her name even in his own head and he knows exactly why.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;Skyler&#39;s side of the bed is empty. Flynn left early.&lt;/span&gt;
+(click: ?page)[==
+He showers. Thinks about the cook schedule, then Jesse, then Jane — and notices that he&#39;s been avoiding saying her name even in his own head and he knows exactly why.
 
-He drives to school. Watches a kid cross at a red light. Wonders, briefly, if the kid has ever bought from one of his dealers. Understands that this thought used to horrify him. Now it's just math.
+(click: ?page)[==
+He drives to school. Watches a kid cross at a red light. Wonders, briefly, if the kid has ever bought from one of his dealers. Understands that this thought used to horrify him. Now it&#39;s just math.
 
-The difference between those two things is what he can't look at directly.
+(click: ?page)[==
+The difference between those two things is what he can&#39;t look at directly.
+(click: ?page)[==
 After fifth period his phone buzzes. Jesse. Crying, or close enough.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/7.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/7.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Combo is dead. Shot on a corner. Had product on him.
 
+(click: ?page)[==
 Walt processes it: a distribution node, removed. He tells Jesse to stay inside and hangs up, then sits with the clinical efficiency of that thought for the rest of the afternoon.
 
-He isn't sure when he became someone who thinks like this. He's fairly sure he can't go back.
-He drives to Jesse's apartment after dark.
+(click: ?page)[==
+He isn&#39;t sure when he became someone who thinks like this. He&#39;s fairly sure he can&#39;t go back.
+(click: ?page)[==
+He drives to Jesse&#39;s apartment after dark.
 
-He sits in the Aztek on the curb for eleven minutes. He tells himself he's deciding what to say. He isn't. He's stalling. He has been stalling since the moment he agreed to cook in an RV in the desert and called it a plan.
+(click: ?page)[==
+He sits in the Aztek on the curb for eleven minutes. He tells himself he&#39;s deciding what to say. He isn&#39;t. He&#39;s stalling. He has been stalling since the moment he agreed to cook in an RV in the desert and called it a plan.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/6.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/6.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 He goes in. Door unlocked.
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/8.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/8.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Jesse is on the bed. Jane is beside him, both on their backs, both breathing.
 
-Except — Jane isn't.
+(click: ?page)[==
+Except — Jane isn&#39;t.
 
-Walt crosses the room in three steps. He knows exactly what this is. He's a chemist. He understands the mechanism perfectly. Roll her to her side, she lives. Don't, she doesn't.
+(click: ?page)[==
+Walt crosses the room in three steps. He knows exactly what this is. He&#39;s a chemist. He understands the mechanism perfectly. Roll her to her side, she lives. Don&#39;t, she doesn&#39;t.
 
+(click: ?page)[==
 His hand reaches out.
 
 [[Roll her over]]
-[[Don't]]</tw-passagedata><tw-passagedata pid="24" name="— ACT 2 — Walt — Bad Path" tags="" position="1000,2400" size="100,100">6:15 AM.
+[[Don&#39;t]]</tw-passagedata><tw-passagedata pid="24" name="— ACT 2 — Walt — Bad Path" tags="bb-bg-heisenberg" position="1000,2400" size="100,100">6:15 AM.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/5.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/5.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-Walt catalogs his body: left knee, morning nausea pending, chemo fatigue sitting in his shoulders like wet sand. Skyler's side of the bed empty. Flynn gone early.
+(click: ?page)[==
+Walt catalogs his body: left knee, morning nausea pending, chemo fatigue sitting in his shoulders like wet sand. &lt;span data-bb-speaker=&quot;heisenberg&quot;&gt;Skyler&#39;s side of the bed empty. Flynn gone early.&lt;/span&gt;
 
-He showers. Thinks about Jesse — the way Jesse always needs managing. The way Combo's death is going to require managing. The way Jane is going to require managing.
+(click: ?page)[==
+He showers. Thinks about Jesse — the way Jesse always needs managing. The way Combo&#39;s death is going to require managing. The way Jane is going to require managing.
 
-He drives to school. Watches a kid cross at a red light. The thought arrives and departs cleanly: *I wonder if he's ever bought from my operation.* Not horror. Not pride. Just math.
+(click: ?page)[==
+He drives to school. Watches a kid cross at a red light. The thought arrives and departs cleanly: *I wonder if he&#39;s ever bought from my operation.* Not horror. Not pride. Just math.
+(click: ?page)[==
 Jesse calls after fifth period. Crying. Combo is dead. Walt tells him to stay put and hangs up and spends the rest of the day being very good at chemistry in front of twenty-three teenagers.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/7.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/7.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-He drives to Jesse's apartment after dark. Sits in the Aztek on the curb.
+(click: ?page)[==
+He drives to Jesse&#39;s apartment after dark. Sits in the Aztek on the curb.
 
-He tells himself he's thinking about what to say. He isn't. He's thinking about Jane. About the fact that she knows too much. About the fact that Jesse won't let go of her on his own.
+(click: ?page)[==
+He tells himself he&#39;s thinking about what to say. He isn&#39;t. He&#39;s thinking about Jane. About the fact that she knows too much. About the fact that Jesse won&#39;t let go of her on his own.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/6.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/6.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 He goes in. Door unlocked.
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/8.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/8.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Jesse is on the bed. Jane is beside him.
 
+(click: ?page)[==
 Jane is choking.
 
-Walt crosses the room in three steps. He's a chemist. He knows the mechanism. Roll her to her side, she lives. Don't, she doesn't.
+(click: ?page)[==
+Walt crosses the room in three steps. He&#39;s a chemist. He knows the mechanism. Roll her to her side, she lives. Don&#39;t, she doesn&#39;t.
 
+(click: ?page)[==
 His hand reaches out.
 
 [[Roll her over]]
-[[Don't]]</tw-passagedata><tw-passagedata pid="25" name="Roll her over" tags="" position="575,2575" size="100,100">(set: $janeLives to true)
+[[Don&#39;t]]</tw-passagedata><tw-passagedata pid="25" name="Roll her over" tags="bb-bg-walt" position="575,2575" size="100,100">(set: $janeLives to true)
 His hand keeps moving.
 
+(click: ?page)[==
 He turns her. She coughs — wet and awful, a sound with no dignity in it at all — and then she breathes.
 
+(click: ?page)[==
 Walt sits back against the wall, shaking.
+(click: ?page)[==
 He looks at the girl. He looks at his hand. He thinks: *I wanted her dead. I know I did. I sat in that car and I thought about it and I wanted it.*
 
+(click: ?page)[==
 He also just saved her.
 
+(click: ?page)[==
 He pulls a blanket over both of them. Turns off the TV. Leaves the door as he found it.
 
+(click: ?page)[==
 In the hallway he leans against the wall and breathes for a long time.
 
-Whatever he's becoming — he stopped it tonight. Just for tonight.
-He drives home. Skyler is asleep on the couch. He stands in the doorway. He considers waking her and saying *I did something tonight.* He doesn't.
+(click: ?page)[==
+Whatever he&#39;s becoming — he stopped it tonight. Just for tonight.
+(click: ?page)[==
+He drives home. &lt;span data-bb-speaker=&quot;walt&quot;&gt;Skyler is asleep on the couch. He stands in the doorway.&lt;/span&gt; He considers waking her and saying *I did something tonight.* He doesn&#39;t.
 
+(click: ?page)[==
 He drinks a glass of water in the dark kitchen.
 
+(click: ?page)[==
 He thinks: tomorrow Saul is going to call.
 
-[[— ACT 3 — Saul — Jane Alive]]</tw-passagedata><tw-passagedata pid="26" name="Don&#x27;t" tags="" position="825,2575" size="100,100">(set: $janeLives to false)
+[[— ACT 3 — Saul — Jane Alive]]</tw-passagedata><tw-passagedata pid="26" name="Don&#39;t" tags="bb-bg-heisenberg" position="825,2575" size="100,100">(set: $janeLives to false)
 His hand stops.
 
+(click: ?page)[==
 There are two voices.
 
+(click: ?page)[==
 One is screaming.
 
-The other is quieter and more reasonable, and it talks about blackmail, about Jesse, about the fact that the universe is handling a problem he doesn't have the stomach for, and about how if he interferes now he is choosing her over everything he has built and everyone who depends on it.
+(click: ?page)[==
+The other is quieter and more reasonable, and it talks about blackmail, about Jesse, about the fact that the universe is handling a problem he doesn&#39;t have the stomach for, and about how if he interferes now he is choosing her over everything he has built and everyone who depends on it.
 
+(click: ?page)[==
 The second voice wins. Not by much. But it wins.
+(click: ?page)[==
 She stops making sounds.
 
-He stands. Walks out. He doesn't remember driving home.
+(click: ?page)[==
+He stands. Walks out. He doesn&#39;t remember driving home.
 
-Skyler is asleep on the couch. He stands in the doorway and doesn't go in.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;heisenberg&quot;&gt;Skyler is asleep on the couch. He stands in the doorway and doesn&#39;t go in.&lt;/span&gt;
 
+(click: ?page)[==
 He drinks a glass of water in the dark kitchen and stares at his hand on the glass.
 
+(click: ?page)[==
 He thinks: tomorrow Saul is going to call.
 
 [[— ACT 3 — Saul — Jane Dead]]
@@ -418,589 +821,847 @@ He thinks: tomorrow Saul is going to call.
 &lt;!--                      ACT 3 — SAUL                           --&gt;
 &lt;!-- ============================================================ --&gt;
 
-&lt;!-- ★ CUTSCENE 3 marker — see notes at bottom of file ★ --&gt;</tw-passagedata><tw-passagedata pid="27" name="— ACT 3 — Saul — Jane Dead" tags="" position="900,2700" size="100,100">Dawn at the strip mall.
+&lt;!-- ★ CUTSCENE 3 marker — see notes at bottom of file ★ --&gt;</tw-passagedata><tw-passagedata pid="27" name="— ACT 3 — Saul — Jane Dead" tags="bb-bg-saul" position="900,2700" size="100,100">Dawn at the strip mall.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/9.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/9.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Saul Goodman — real name James McGill, age undisclosed, height whatever the shoes say — unlocks Saul Goodman and Associates.
 
+(click: ?page)[==
 There are no associates.
 
+(click: ?page)[==
 He flips on the lights. The Statue of Liberty inflatable on the roof hisses awake through the ceiling. He brews what he calls constitutional coffee, which is just the cheapest grounds at the QuikMart run through twice.
 
+(click: ?page)[==
 He feels the call coming the way old men feel weather.
 
-The burner has three missed calls from HEISENBERG.
-Two from KID.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;heisenberg&quot;&gt;The burner has three missed calls from HEISENBERG.&lt;/span&gt;
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;Two from KID.&lt;/span&gt;
 
+(click: ?page)[==
 He stares at both names for a long time.
 
+(click: ?page)[==
 *Who do you call first?*
 
 [[Call Heisenberg - Jane Dead]]
-[[Call the Kid First - Jane Dead]]</tw-passagedata><tw-passagedata pid="28" name="Call the Kid First - Jane Dead" tags="" position="750,2850" size="100,100">Voicemail. Of course.
+[[Call the Kid First - Jane Dead]]</tw-passagedata><tw-passagedata pid="28" name="Call the Kid First - Jane Dead" tags="bb-bg-saul" position="750,2850" size="100,100">Voicemail. Of course.
 
-Saul leaves a message in the voice he uses when he's trying to sound calm and isn't:
+(click: ?page)[==
+Saul leaves a message in the voice he uses when he&#39;s trying to sound calm and isn&#39;t:
 
-"Call me back before you call anyone else. That includes nine-one-one. *Especially* nine-one-one. Don't touch anything. Don't talk to anyone. Just — call me back."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Call me back before you call anyone else. That includes nine-one-one. *Especially* nine-one-one. Don&#39;t touch anything. Don&#39;t talk to anyone. Just — call me back.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 He hangs up and calls Heisenberg.
 
+(click: ?page)[==
 Walt picks up on the first ring.
 
-*"The girl is dead."*
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;heisenberg&quot;&gt;*&quot;The girl is dead.&quot;*&lt;/span&gt;
 
+(click: ?page)[==
 Three words. Flat. Like a man reporting weather.
 
+(click: ?page)[==
 Saul absorbs it the way he absorbs most things — by not absorbing it at all, by filing it immediately into the professional column.
 
-"Go home. Shower. Kiss your wife. Go to work tomorrow. I'll handle the rest."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Go home. Shower. Kiss your wife. Go to work tomorrow. I&#39;ll handle the rest.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 He hangs up. Calls Mike.
 
-[[The Mike Call - Jane Dead]]</tw-passagedata><tw-passagedata pid="29" name="Call Heisenberg - Jane Dead" tags="" position="1050,2850" size="100,100">Walt picks up on the first ring.
+[[The Mike Call - Jane Dead]]</tw-passagedata><tw-passagedata pid="29" name="Call Heisenberg - Jane Dead" tags="bb-bg-saul" position="1050,2850" size="100,100">Walt picks up on the first ring.
 
-*"The girl is dead."*
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;heisenberg&quot;&gt;*&quot;The girl is dead.&quot;*&lt;/span&gt;
 
+(click: ?page)[==
 Three words. Flat. Not grief. Not panic. Just — information.
 
+(click: ?page)[==
 Saul absorbs it the way he absorbs most things — by not absorbing it at all.
 
-"Go home," Saul says. "Shower. Kiss your wife. Go to work tomorrow. I'll handle the rest."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Go home,&quot; Saul says. &quot;Shower. Kiss your wife. Go to work tomorrow. I&#39;ll handle the rest.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 He hangs up and tries the Kid.
 
+(click: ?page)[==
 Voicemail. He leaves a message. Calls Mike.
 
-[[The Mike Call - Jane Dead]]</tw-passagedata><tw-passagedata pid="30" name="The Mike Call - Jane Dead" tags="" position="900,3000" size="100,100">Thirty seconds flat.
+[[The Mike Call - Jane Dead]]</tw-passagedata><tw-passagedata pid="30" name="The Mike Call - Jane Dead" tags="bb-bg-mike" position="900,3000" size="100,100">Thirty seconds flat.
 
+(click: ?page)[==
 Address. Apartment number. Specific situation.
 
-Mike doesn't do small talk.
+(click: ?page)[==
+Mike doesn&#39;t do small talk.
 
-"The kid in the apartment too?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;mike&quot;&gt;&quot;The kid in the apartment too?&quot;&lt;/span&gt;
 
-Saul hears what's inside the question.
+(click: ?page)[==
+Saul hears what&#39;s inside the question.
 
-"Do NOT touch the kid."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Do NOT touch the kid.&quot;&lt;/span&gt;
 
-"I'm not going to touch the kid, Saul."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;mike&quot;&gt;&quot;I&#39;m not going to touch the kid, Saul.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Mike hangs up. Saul realizes his hand is shaking on the receiver.
 
-He didn't think Mike would. But he had to say it. That small moment — the fact that he had to say it — is the first crack this morning.
+(click: ?page)[==
+He didn&#39;t think Mike would. But he had to say it. That small moment — the fact that he had to say it — is the first crack this morning.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/10.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/10.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-Hours pass. Saul doesn't leave the office.
+(click: ?page)[==
+Hours pass. Saul doesn&#39;t leave the office.
 
-He watches the Statue of Liberty inflate and deflate through the window. He thinks about how every small professional compromise lines up behind you like cars on a highway until you can't see where the road started.
+(click: ?page)[==
+He watches the Statue of Liberty inflate and deflate through the window. He thinks about how every small professional compromise lines up behind you like cars on a highway until you can&#39;t see where the road started.
 
-The burner rings. It's the Kid.
+(click: ?page)[==
+The burner rings. It&#39;s the Kid.
 
-[[Jesse Calls - Jane Dead]]</tw-passagedata><tw-passagedata pid="31" name="Jesse Calls - Jane Dead" tags="" position="900,3150" size="100,100">Jesse is crying so hard Saul can't understand him for thirty seconds.
+[[Jesse Calls - Jane Dead]]</tw-passagedata><tw-passagedata pid="31" name="Jesse Calls - Jane Dead" tags="bb-bg-jesse" position="900,3150" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;Jesse is crying so hard Saul can&#39;t understand him for thirty seconds.&lt;/span&gt;
 
-"I know," Saul says. "I already know. Listen to me. There's a guy coming to take care of everything. His name doesn't matter. He's going to make this look like what it is — an overdose. Because it *was* an overdose."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I know,&quot; Saul says. &quot;I already know. Listen to me. There&#39;s a guy coming to take care of everything. His name doesn&#39;t matter. He&#39;s going to make this look like what it is — an overdose. Because it *was* an overdose.&quot;&lt;/span&gt;
 
-Jesse starts to ask *did Mr. White —*
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;Jesse starts to ask *did Mr. White —*&lt;/span&gt;
 
-"Motel. East side. Now. I'll come to you."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Motel. East side. Now. I&#39;ll come to you.&quot;&lt;/span&gt;
 
-Jesse goes quiet. "Okay."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;Jesse goes quiet. &quot;Okay.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Saul sits in the car outside the motel for four minutes before going in.
 
-He tells himself he's thinking about what to say. He isn't. He's been stalling his whole career.
+(click: ?page)[==
+He tells himself he&#39;s thinking about what to say. He isn&#39;t. He&#39;s been stalling his whole career.
 
-[[The Motel Room - Jane Dead]]</tw-passagedata><tw-passagedata pid="32" name="The Motel Room - Jane Dead" tags="" position="900,3300" size="100,100">Jesse is sitting on the edge of the bed with his hands clasped between his knees.
+[[The Motel Room - Jane Dead]]</tw-passagedata><tw-passagedata pid="32" name="The Motel Room - Jane Dead" tags="bb-bg-saul" position="900,3300" size="100,100">Jesse is sitting on the edge of the bed with his hands clasped between his knees.
 
-For one second he looks like a kid sent to the principal's office.
+(click: ?page)[==
+For one second he looks like a kid sent to the principal&#39;s office.
 
-Then Saul looks at his face again and it's nothing like that. It's grief so raw it hasn't found a shape yet.
+(click: ?page)[==
+Then Saul looks at his face again and it&#39;s nothing like that. It&#39;s grief so raw it hasn&#39;t found a shape yet.
 
+(click: ?page)[==
 Saul pulls up the one chair. They sit in silence.
 
+(click: ?page)[==
 Then Jesse says, very quietly:
 
-*"I think I killed her."*
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;*&quot;I think I killed her.&quot;*&lt;/span&gt;
 
+(click: ?page)[==
 Saul sees his two options with perfect clarity.
 
+(click: ?page)[==
 He can tell Jesse what he suspects — that Walt was there, that Walt let it happen, that a girl choked to death because she was inconvenient.
 
+(click: ?page)[==
 Or he can let Jesse carry it. Easier. Cleaner. Better for the retainer.
 
+(click: ?page)[==
 *What do you tell him?*
 
 [[Let Jesse Believe It - Jane Dead]]
-[[Tell Jesse the Truth - Jane Dead]]</tw-passagedata><tw-passagedata pid="33" name="Let Jesse Believe It - Jane Dead" tags="" position="700,3475" size="100,100">"Addicts die, Jesse. It's what happens. She rolled the wrong way. You couldn't have known. You couldn't have stopped it."
+[[Tell Jesse the Truth - Jane Dead]]</tw-passagedata><tw-passagedata pid="33" name="Let Jesse Believe It - Jane Dead" tags="bb-bg-saul" position="700,3475" size="100,100">&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Addicts die, Jesse. It&#39;s what happens. She rolled the wrong way. You couldn&#39;t have known. You couldn&#39;t have stopped it.&quot;&lt;/span&gt;
 
-Jesse nods. He isn't hearing the words. He's hearing the permission to hate himself — something that makes the grief make sense by giving it an address.
+(click: ?page)[==
+Jesse nods. He isn&#39;t hearing the words. He&#39;s hearing the permission to hate himself — something that makes the grief make sense by giving it an address.
 
+(click: ?page)[==
 Saul watches it settle on him like a coat.
 
-"I know a place past Los Lunas. Takes cash, no questions. You go in, you get clean, you come out the other side."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I know a place past Los Lunas. Takes cash, no questions. You go in, you get clean, you come out the other side.&quot;&lt;/span&gt;
 
-"...okay."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;...okay.&quot;&lt;/span&gt;&lt;/span&gt;
 
+(click: ?page)[==
 In the parking lot, Saul stands next to his car for a full minute.
 
-He did the professional thing. He also just handed a kid the straps on something that wasn't his to carry.
+(click: ?page)[==
+He did the professional thing. He also just handed a kid the straps on something that wasn&#39;t his to carry.
 
+(click: ?page)[==
 He gets in the car.
 
-[[Saul's Decision - Bad Path]]</tw-passagedata><tw-passagedata pid="34" name="Saul&#x27;s Decision - Bad Path" tags="" position="700,3625" size="100,100">Three days later, Walt calls.
+[[Saul&#39;s Decision - Bad Path]]</tw-passagedata><tw-passagedata pid="34" name="Saul&#39;s Decision - Bad Path" tags="bb-bg-saul" position="700,3625" size="100,100">Three days later, Walt calls.
 
-Gus Fring. Industrial scale. The kind of operation where there's no walking back.
+(click: ?page)[==
+Gus Fring. Industrial scale. The kind of operation where there&#39;s no walking back.
 
+(click: ?page)[==
 *What do you do?*
 
 [[Broker the Gus Deal - Bad Ending]]
-[[Warn Jesse Instead - Bad Ending]]</tw-passagedata><tw-passagedata pid="35" name="Broker the Gus Deal - Bad Ending" tags="" position="550,3775" size="100,100">Saul makes the introduction.
+[[Warn Jesse Instead - Bad Ending]]</tw-passagedata><tw-passagedata pid="35" name="Broker the Gus Deal - Bad Ending" tags="bb-bg-saul" position="550,3775" size="100,100">Saul makes the introduction.
 
-He tells himself it's just business.
+(click: ?page)[==
+He tells himself it&#39;s just business.
 
-He's still telling himself things when the DEA starts watching the laundry. When Gus dies. When the cartel burns. When Jack Welker's crew takes over.
+(click: ?page)[==
+He&#39;s still telling himself things when the DEA starts watching the laundry. When Gus dies. When the cartel burns. When Jack Welker&#39;s crew takes over.
 
-Jesse doesn't get out.
+(click: ?page)[==
+Jesse doesn&#39;t get out.
 
-Jack's men find him. Put him in a hole. Make him cook. He cooks the best meth in the country in a cage with a chain around his ankle and a photo of Andrea and Brock on the wall that he isn't allowed to touch.
+(click: ?page)[==
+Jack&#39;s men find him. Put him in a hole. Make him cook. He cooks the best meth in the country in a cage with a chain around his ankle and a photo of Andrea and Brock on the wall that he isn&#39;t allowed to touch.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/11.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/11.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-He doesn't sleep. He stops being Jesse Pinkman and becomes something smaller that has no name.
+(click: ?page)[==
+He doesn&#39;t sleep. He stops being Jesse Pinkman and becomes something smaller that has no name.
+(click: ?page)[==
 Walt dies in the lab.
 
+(click: ?page)[==
 Shot. By the machine gun he built. For the same people he chose over Jesse, over and over, until Jesse was the only one left to save and Walt had nothing left to spend.
+(click: ?page)[==
 Saul ends up in Omaha.
 
+(click: ?page)[==
 Managing a Cinnabon.
 
-He wears a different name. He watches the door. He doesn't call anyone he used to know.
+(click: ?page)[==
+He wears a different name. He watches the door. He doesn&#39;t call anyone he used to know.
 
+(click: ?page)[==
 Some mornings, when the mall is quiet, he thinks about the motel room. The kid with his hands between his knees.
 
-The thing he didn't say.
+(click: ?page)[==
+The thing he didn&#39;t say.
 
 ---
 
+(click: ?page)[==
 *There are no winners in Albuquerque.*
 
-*Some people don't even make it out.*
+(click: ?page)[==
+*Some people don&#39;t even make it out.*
 
 ---
 
-**[END — BAD PATH]**</tw-passagedata><tw-passagedata pid="36" name="Warn Jesse Instead - Bad Ending" tags="" position="850,3775" size="100,100">Saul calls Jesse before Walt.
+(click: ?page)[==
+**[END — BAD PATH]**</tw-passagedata><tw-passagedata pid="36" name="Warn Jesse Instead - Bad Ending" tags="bb-bg-saul" position="850,3775" size="100,100">Saul calls Jesse before Walt.
 
-He tells him Walt is going deeper. Tells him if he doesn't get out now, he never will.
+(click: ?page)[==
+He tells him Walt is going deeper. Tells him if he doesn&#39;t get out now, he never will.
 
-Jesse says he'll think about it.
+(click: ?page)[==
+Jesse says he&#39;ll think about it.
 
-He doesn't get out.
+(click: ?page)[==
+He doesn&#39;t get out.
 
-He's already too deep — in the money, in the guilt, in the grief of Jane that never left. He tells himself he'll leave after the next cook. Then Brock gets poisoned. And Jesse stops thinking about leaving at all.
+(click: ?page)[==
+He&#39;s already too deep — in the money, in the guilt, in the grief of Jane that never left. He tells himself he&#39;ll leave after the next cook. Then Brock gets poisoned. And Jesse stops thinking about leaving at all.
 
-Jack Welker's crew finds him. They put him in a hole.
+(click: ?page)[==
+Jack Welker&#39;s crew finds him. They put him in a hole.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/11.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/11.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Walt dies in the lab. Saul ends up in Omaha.
 
-Some mornings, when the mall is quiet, Saul thinks about Jesse's voice on the burner. *I'll think about it.*
+(click: ?page)[==
+Some mornings, when the mall is quiet, Saul thinks about Jesse&#39;s voice on the burner. *I&#39;ll think about it.*
 
+(click: ?page)[==
 He never called back.
 
 ---
 
+(click: ?page)[==
 *There are no winners in Albuquerque.*
 
-*Some people don't even make it out.*
+(click: ?page)[==
+*Some people don&#39;t even make it out.*
 
 ---
 
-**[END — BAD PATH]**</tw-passagedata><tw-passagedata pid="37" name="Tell Jesse the Truth - Jane Dead" tags="" position="1100,3475" size="100,100">Saul opens his mouth.
+(click: ?page)[==
+**[END — BAD PATH]**</tw-passagedata><tw-passagedata pid="37" name="Tell Jesse the Truth - Jane Dead" tags="bb-bg-saul" position="1100,3475" size="100,100">Saul opens his mouth.
 
+(click: ?page)[==
 Closes it.
 
+(click: ?page)[==
 Opens it again.
 
+(click: ?page)[==
 This is going to violate approximately nine bar association rules and his own rule number one — *do not get involved* — which he has never once successfully followed.
 
-"I don't think you killed her."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I don&#39;t think you killed her.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Jesse looks up.
 
-"I think somebody was there. Somebody who knew she was a problem. Somebody who called me that morning *already knowing* she was dead."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I think somebody was there. Somebody who knew she was a problem. Somebody who called me that morning *already knowing* she was dead.&quot;&lt;/span&gt;
 
-Jesse's face does the math slowly. Then all at once.
+(click: ?page)[==
+Jesse&#39;s face does the math slowly. Then all at once.
 
-"No."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;No.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Saul gives him the silence.
 
+(click: ?page)[==
 Jesse stares at the wall. His jaw is tight. His hands are shaking.
 
-"Why are you telling me this?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Why are you telling me this?&quot;&lt;/span&gt;
 
-"Because I've been on the other side of this my whole career. I'm the guy who talks people into eating it. And I am very tired. You deserve to know what you're walking out of."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Because I&#39;ve been on the other side of this my whole career. I&#39;m the guy who talks people into eating it. And I am very tired. You deserve to know what you&#39;re walking out of.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 *What do you tell Jesse to do?*
 
 [[Get Jesse Out - Good Ending]]
-[[Leave Jesse to His Choices - Bad Ending]]</tw-passagedata><tw-passagedata pid="38" name="Leave Jesse to His Choices - Bad Ending" tags="" position="950,3650" size="100,100">Saul doesn't push.
+[[Leave Jesse to His Choices - Bad Ending]]</tw-passagedata><tw-passagedata pid="38" name="Leave Jesse to His Choices - Bad Ending" tags="bb-bg-jesse" position="950,3650" size="100,100">Saul doesn&#39;t push.
 
+(click: ?page)[==
 Jesse has the truth now. What he does with it is his own.
-Jesse is paralyzed by it. He can't confront Walt, can't leave, can't stay clean with this knowledge sitting in him like a stone. He tells himself he'll figure it out after the next cook.
+(click: ?page)[==
+Jesse is paralyzed by it. He can&#39;t confront Walt, can&#39;t leave, can&#39;t stay clean with this knowledge sitting in him like a stone. He tells himself he&#39;ll figure it out after the next cook.
 
-He doesn't.
+(click: ?page)[==
+He doesn&#39;t.
 
-Jack Welker's crew finds him eventually. Same cage. Same chain. Same photo on the wall.
+(click: ?page)[==
+Jack Welker&#39;s crew finds him eventually. Same cage. Same chain. Same photo on the wall.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/11.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/11.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Walt dies in the lab. Saul ends up in Omaha.
 
 ---
 
+(click: ?page)[==
 *There are no winners in Albuquerque.*
 
 ---
 
-**[END — BAD PATH]**</tw-passagedata><tw-passagedata pid="39" name="Get Jesse Out - Good Ending" tags="" position="1100,3650" size="100,100">"I know a guy. Not the rehab kind. The disappearing kind. New name, new state. You drive north and you don't come back."
+(click: ?page)[==
+**[END — BAD PATH]**</tw-passagedata><tw-passagedata pid="39" name="Get Jesse Out - Good Ending" tags="bb-bg-saul" position="1100,3650" size="100,100">&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I know a guy. Not the rehab kind. The disappearing kind. New name, new state. You drive north and you don&#39;t come back.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Jesse stares at the carpet.
 
-"Alaska," he says finally.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Alaska,&quot; he says finally.&lt;/span&gt;
 
-"Sure. Alaska. Why not Alaska."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Sure. Alaska. Why not Alaska.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Two weeks later, Saul drives Jesse to a pull-off past the city limits. A plain white van is idling. Jesse gets out with a backpack and nothing else.
 
-He doesn't hug Saul. Doesn't say thank you.
+(click: ?page)[==
+He doesn&#39;t hug Saul. Doesn&#39;t say thank you.
 
+(click: ?page)[==
 He nods once.
 
+(click: ?page)[==
 Saul nods back.
 
+(click: ?page)[==
 The van drives north.
 
+(click: ?page)[==
 When Saul gets back to the office, Heisenberg is going to call and ask where his partner went. Saul is going to lie to his face.
 
-For the first time in a long time, he's going to sleep fine that night.
+(click: ?page)[==
+For the first time in a long time, he&#39;s going to sleep fine that night.
 
-Three months later, Walter White drives to the police station on a Tuesday morning, asks for a cup of coffee, and waits. The cancer has come back, stage four. He'd known for six weeks. He didn't want to die in the lab. He didn't want to die as Heisenberg.
+(click: ?page)[==
+Three months later, Walter White drives to the police station on a Tuesday morning, asks for a cup of coffee, and waits. The cancer has come back, stage four. He&#39;d known for six weeks. He didn&#39;t want to die in the lab. He didn&#39;t want to die as Heisenberg.
 
+(click: ?page)[==
 The confession takes four hours. Every name. Every corner. Every cook site.
 
-Skyler keeps the house. Flynn doesn't speak to his father for two years, and then he does.
+(click: ?page)[==
+Skyler keeps the house. Flynn doesn&#39;t speak to his father for two years, and then he does.
 
+(click: ?page)[==
 Saul closes his practice on a Friday. Drives west. Opens something smaller and quieter. Sleeps fine.
 
 ---
 
+(click: ?page)[==
 *Jesse Pinkman drove north and kept driving.*
 
+(click: ?page)[==
 *He changed his name. He learned to work with his hands.*
 
+(click: ?page)[==
 *He built things.*
 
+(click: ?page)[==
 *He never cooked again.*
 
 ---
 
+(click: ?page)[==
 **[END — GOOD PATH]**
 
 
-&lt;!-- ============================================================ --&gt;</tw-passagedata><tw-passagedata pid="40" name="— ACT 3 — Saul — Jane Alive" tags="" position="300,2700" size="100,100">Dawn at the strip mall.
+&lt;!-- ============================================================ --&gt;</tw-passagedata><tw-passagedata pid="40" name="— ACT 3 — Saul — Jane Alive" tags="bb-bg-saul" position="300,2700" size="100,100">Dawn at the strip mall.
 
-&lt;div style="text-align:center; margin:20px 0;"&gt;
-  &lt;iframe src="Videos/9.mp4" width="600" height="400" style="max-width:90%; border:0; border-radius:8px;" allow="autoplay; fullscreen" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/9.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
+(click: ?page)[==
 Saul Goodman — real name James McGill, age undisclosed, height whatever the shoes say — unlocks Saul Goodman and Associates.
 
+(click: ?page)[==
 There are no associates.
 
+(click: ?page)[==
 He brews constitutional coffee. The difference this morning — the thing sitting differently in his chest — is that the girl is alive.
 
-He knows what Walt almost did. He knows because Walt called at 3 AM, voice too steady. The kind of steady that only happens after someone has just decided something and hasn't processed it yet.
+(click: ?page)[==
+He knows what Walt almost did. He knows because Walt called at 3 AM, voice too steady. The kind of steady that only happens after someone has just decided something and hasn&#39;t processed it yet.
 
-*She's fine. Jesse's fine.*
+(click: ?page)[==
+*She&#39;s fine. Jesse&#39;s fine.*
 
+(click: ?page)[==
 The way Walt said *fine* told Saul everything.
 
-The burner rings. It's the Kid.
+(click: ?page)[==
+The burner rings. It&#39;s the Kid.
 
-[[Jesse Calls - Jane Alive]]</tw-passagedata><tw-passagedata pid="41" name="Jesse Calls - Jane Alive" tags="" position="300,2875" size="100,100">"Yo, it's me."
+[[Jesse Calls - Jane Alive]]</tw-passagedata><tw-passagedata pid="41" name="Jesse Calls - Jane Alive" tags="bb-bg-jesse" position="300,2875" size="100,100">&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Yo, it&#39;s me.&quot;&lt;/span&gt;
 
-"I know it's you. What's happening?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I know it&#39;s you. What&#39;s happening?&quot;&lt;/span&gt;
 
-"Jane's alive."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Jane&#39;s alive.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 A pause. Like Jesse is still surprised by it.
 
-"She's okay. She was — it was bad, but she's okay. And Saul, I think Mr. White was there. Jane told me. She saw him. Standing there. Just standing there."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;She&#39;s okay. She was — it was bad, but she&#39;s okay. And Saul, I think Mr. White was there. Jane told me. She saw him. Standing there. Just standing there.&quot;&lt;/span&gt;
 
-"And then she said he reached down and rolled her over."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;And then she said he reached down and rolled her over.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Saul stares at the Statue of Liberty through the window.
 
+(click: ?page)[==
 *He reached down and rolled her over.*
 
+(click: ?page)[==
 After all the inches Walt has been sliding in one direction, he stopped at the last one.
 
-"Come to the office. Bring Jane. Don't call Walt yet."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Come to the office. Bring Jane. Don&#39;t call Walt yet.&quot;&lt;/span&gt;
 
-[[The Office Meeting - Jane Alive]]</tw-passagedata><tw-passagedata pid="42" name="The Office Meeting - Jane Alive" tags="" position="300,3050" size="100,100">Jesse and Jane come in looking like they haven't slept.
+[[The Office Meeting - Jane Alive]]</tw-passagedata><tw-passagedata pid="42" name="The Office Meeting - Jane Alive" tags="bb-bg-saul" position="300,3050" size="100,100">&lt;span data-bb-speaker=&quot;jane&quot;&gt;Jesse and Jane come in looking like they haven&#39;t slept.&lt;/span&gt;
 
-Jane has bruises under her eyes. She sits straight anyway.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;Jane has bruises under her eyes. She sits straight anyway.&lt;/span&gt;
 
-Saul lays it out: Walt's operation is growing, Gus Fring is circling, the DEA is getting closer. This is the part of the roller coaster where you can still see the platform.
+(click: ?page)[==
+Saul lays it out: Walt&#39;s operation is growing, Gus Fring is circling, the DEA is getting closer. This is the part of the roller coaster where you can still see the platform.
 
-"You have a window. Both of you. You leave now, you can have a life that isn't this."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;You have a window. Both of you. You leave now, you can have a life that isn&#39;t this.&quot;&lt;/span&gt;
 
-Jesse asks: *What about Mr. White?*
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;Jesse asks: *What about Mr. White?*&lt;/span&gt;
 
+(click: ?page)[==
 *What do you tell him?*
 
 [[Tell Jesse Walt Saved Jane - Jane Alive]]
-[[Don't Tell Jesse - Jane Alive]]</tw-passagedata><tw-passagedata pid="43" name="Don&#x27;t Tell Jesse - Jane Alive" tags="" position="150,3225" size="100,100">"Walt's not your problem anymore. He made his choices. You make yours."
+[[Don&#39;t Tell Jesse - Jane Alive]]</tw-passagedata><tw-passagedata pid="43" name="Don&#39;t Tell Jesse - Jane Alive" tags="bb-bg-saul" position="150,3225" size="100,100">&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;Walt&#39;s not your problem anymore. He made his choices. You make yours.&quot;&lt;/span&gt;
 
-Jesse doesn't look satisfied. But he nods.
+(click: ?page)[==
+Jesse doesn&#39;t look satisfied. But he nods.
 
-Jane squeezes his hand.
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;Jane squeezes his hand.&lt;/span&gt;
 
-"Okay. So how do we do this?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;&quot;Okay. So how do we do this?&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Saul starts making calls.
 
-[[Planning the Exit - Jane Alive]]</tw-passagedata><tw-passagedata pid="44" name="Tell Jesse Walt Saved Jane - Jane Alive" tags="" position="450,3225" size="100,100">"He was there. In your apartment. He saw what was happening and he — he rolled her over."
+[[Planning the Exit - Jane Alive]]</tw-passagedata><tw-passagedata pid="44" name="Tell Jesse Walt Saved Jane - Jane Alive" tags="bb-bg-saul" position="450,3225" size="100,100">&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;He was there. In your apartment. He saw what was happening and he — he rolled her over.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Jesse stares.
 
-"He saved her."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;He saved her.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 The silence in the room is thick.
 
+(click: ?page)[==
 Jesse looks at the table. Something moves across his face — complicated, ugly, honest.
 
-"Why?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Why?&quot;&lt;/span&gt;
 
-"I don't know. Maybe he's not as far gone as either of us thought."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;I don&#39;t know. Maybe he&#39;s not as far gone as either of us thought.&quot;&lt;/span&gt;
 
-Jane is very still. "What happens to him?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jane&quot;&gt;Jane is very still. &quot;What happens to him?&quot;&lt;/span&gt;
 
-"That," Saul says carefully, "is going to be up to him."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;That,&quot; Saul says carefully, &quot;is going to be up to him.&quot;&lt;/span&gt;
 
-[[Planning the Exit - Jane Alive]]</tw-passagedata><tw-passagedata pid="45" name="Planning the Exit - Jane Alive" tags="" position="300,3400" size="100,100">The problem is Walt.
+[[Planning the Exit - Jane Alive]]</tw-passagedata><tw-passagedata pid="45" name="Planning the Exit - Jane Alive" tags="bb-bg-saul" position="300,3400" size="100,100">The problem is Walt.
 
+(click: ?page)[==
 Walt knows everything — every cook site, every contact, every number. If he decides Jesse leaving is a threat, it becomes one.
 
-"You're going to need to talk to him," Saul says. "Tell him you're out. You don't ask. You tell him."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;You&#39;re going to need to talk to him,&quot; Saul says. &quot;Tell him you&#39;re out. You don&#39;t ask. You tell him.&quot;&lt;/span&gt;
 
-Jesse looks at the door like it's the last door he ever wants to walk through.
+(click: ?page)[==
+Jesse looks at the door like it&#39;s the last door he ever wants to walk through.
 
+(click: ?page)[==
 *How does Jesse approach Walt?*
 
 [[Jesse Confronts Walt Directly - Jane Alive]]
-[[Jesse Sends Walt a Message Through Saul - Jane Alive]]</tw-passagedata><tw-passagedata pid="46" name="Jesse Sends Walt a Message Through Saul - Jane Alive" tags="" position="150,3575" size="100,100">Saul calls Walt.
+[[Jesse Sends Walt a Message Through Saul - Jane Alive]]</tw-passagedata><tw-passagedata pid="46" name="Jesse Sends Walt a Message Through Saul - Jane Alive" tags="bb-bg-jesse" position="150,3575" size="100,100">Saul calls Walt.
 
-Simple. Jesse's done. He's going somewhere Walt can't follow. No negotiation.
+(click: ?page)[==
+Simple. Jesse&#39;s done. He&#39;s going somewhere Walt can&#39;t follow. No negotiation.
 
+(click: ?page)[==
 Walt is quiet for a long time.
 
-"Is he safe?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Is he safe?&quot;&lt;/span&gt;
 
-"He will be."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;saul&quot;&gt;&quot;He will be.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Another pause.
 
-"...okay."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;...okay.&quot;&lt;/span&gt;&lt;/span&gt;
 
+(click: ?page)[==
 Not forgiveness. Not resolution. Just Walt saying okay and hanging up.
 
-But it's enough.
+(click: ?page)[==
+But it&#39;s enough.
 
-[[Walt's Choice - Jane Alive]]</tw-passagedata><tw-passagedata pid="47" name="Jesse Confronts Walt Directly - Jane Alive" tags="" position="450,3575" size="100,100">Jesse drives to Walt's house early. Walt answers the door in his robe.
+[[Walt&#39;s Choice - Jane Alive]]</tw-passagedata><tw-passagedata pid="47" name="Jesse Confronts Walt Directly - Jane Alive" tags="bb-bg-jesse" position="450,3575" size="100,100">Jesse drives to Walt&#39;s house early. Walt answers the door in his robe.
 
+(click: ?page)[==
 He looks older than Jesse remembers. Or maybe Jesse is just looking properly for the first time.
 
-"I'm out. I'm not asking. I'm telling you."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;I&#39;m out. I&#39;m not asking. I&#39;m telling you.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 Walt looks at him for a long time.
 
-"You sure?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;You sure?&quot;&lt;/span&gt;
 
-"Yeah."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;jesse&quot;&gt;&quot;Yeah.&quot;&lt;/span&gt;
 
-Walt nods slowly. Looks past Jesse at the street. At the ordinary world he's been steadily destroying from the inside.
+(click: ?page)[==
+Walt nods slowly. Looks past Jesse at the street. At the ordinary world he&#39;s been steadily destroying from the inside.
 
-"Take care of yourself, Jesse."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Take care of yourself, Jesse.&quot;&lt;/span&gt;
 
+(click: ?page)[==
 He goes back inside. The door closes.
 
-Jesse stands on the porch for a moment. Then he walks to his car and drives away and doesn't look back.
+(click: ?page)[==
+Jesse stands on the porch for a moment. Then he walks to his car and drives away and doesn&#39;t look back.
 
-[[Walt's Choice - Jane Alive]]</tw-passagedata><tw-passagedata pid="48" name="Walt&#x27;s Choice - Jane Alive" tags="" position="300,3750" size="100,100">Walt sits at the kitchen table for three hours.
+[[Walt&#39;s Choice - Jane Alive]]</tw-passagedata><tw-passagedata pid="48" name="Walt&#39;s Choice - Jane Alive" tags="bb-bg-walt" position="300,3750" size="100,100">Walt sits at the kitchen table for three hours.
 
+(click: ?page)[==
 Skyler at work. Flynn at school. The house the quietest place on earth.
 
-He thinks about Jesse. About the girl. About the moment in that apartment when his hand stopped in the air and then kept moving anyway, and what that means about who he still is underneath everything he's become.
+(click: ?page)[==
+He thinks about Jesse. About the girl. About the moment in that apartment when his hand stopped in the air and then kept moving anyway, and what that means about who he still is underneath everything he&#39;s become.
 
-He thinks about Gus Fring waiting on the other end of a call he hasn't made yet.
+(click: ?page)[==
+He thinks about Gus Fring waiting on the other end of a call he hasn&#39;t made yet.
 
+(click: ?page)[==
 He thinks about what happens if he makes it.
 
+(click: ?page)[==
 *What does Walt do?*
 
 [[Walt Walks Away - Good Ending]]
-[[Walt Makes the Call - Bad Ending]]</tw-passagedata><tw-passagedata pid="49" name="Walt Walks Away - Good Ending" tags="" position="150,3925" size="100,100">Walt doesn't make the call.
+[[Walt Makes the Call - Bad Ending]]</tw-passagedata><tw-passagedata pid="49" name="Walt Walks Away - Good Ending" tags="bb-bg-walt" position="150,3925" size="100,100">Walt doesn&#39;t make the call.
 
+(click: ?page)[==
 He sits at the table until Skyler comes home. She walks in and stops when she sees him sitting there in the middle of the afternoon.
 
-"Walt?"
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;Walt?&quot;&lt;/span&gt;
 
-"I want to stop. I need to tell you everything. And then I want to stop."
+(click: ?page)[==
+&lt;span data-bb-speaker=&quot;walt&quot;&gt;&quot;I want to stop. I need to tell you everything. And then I want to stop.&quot;&lt;/span&gt;
 
-Four hours. Skyler doesn't say much. Asks a few questions. Cries once, quietly, with her back to him. She doesn't forgive him that day, or the next week, or the month after.
+(click: ?page)[==
+Four hours. Skyler doesn&#39;t say much. Asks a few questions. Cries once, quietly, with her back to him. She doesn&#39;t forgive him that day, or the next week, or the month after.
 
-But she doesn't leave.
+(click: ?page)[==
+But she doesn&#39;t leave.
 
+(click: ?page)[==
 Walt cooperates with the DEA through a separate lawyer. He gives them everything. Cook sites, contacts, money trails. In exchange: a reduced sentence, proximity to family, access to a hospital.
 
+(click: ?page)[==
 The cancer responds to treatment. Barely. But it does.
 
 ---
 
+(click: ?page)[==
 *Walter White served four years.*
 
+(click: ?page)[==
 *He came home to a smaller house and a family still learning how to be one.*
 
+(click: ?page)[==
 *He never cooked again.*
 
 ---
 
+(click: ?page)[==
 Jesse and Jane crossed the state line on a Thursday afternoon, windows down, a bad radio signal picking up a country station out of Colorado.
 
-Jane changed her name. Jesse didn't — he figured he'd earned the right to keep it.
+(click: ?page)[==
+Jane changed her name. Jesse didn&#39;t — he figured he&#39;d earned the right to keep it.
 
+(click: ?page)[==
 He learned to build furniture. He was good at it. The kind of good that comes from starting over five times before you get it right.
 
 ---
 
+(click: ?page)[==
 *Saul Goodman closed his practice on a Friday.*
 
+(click: ?page)[==
 *He drove west. Opened something smaller. Quieter.*
 
-*Took cases that didn't require a burner phone.*
+(click: ?page)[==
+*Took cases that didn&#39;t require a burner phone.*
 
+(click: ?page)[==
 *He slept fine.*
 
 ---
 
 ---
 
+(click: ?page)[==
 *There are no winners in Albuquerque.*
 
+(click: ?page)[==
 *But sometimes people choose to stop losing.*
 
 ---
 
-**[END — GOOD PATH, ALL THREE]**</tw-passagedata><tw-passagedata pid="50" name="Walt Makes the Call - Bad Ending" tags="" position="450,3925" size="100,100">Walt picks up the phone.
+(click: ?page)[==
+**[END — GOOD PATH, ALL THREE]**</tw-passagedata><tw-passagedata pid="50" name="Walt Makes the Call - Bad Ending" tags="bb-bg-heisenberg" position="450,3925" size="100,100">Walt picks up the phone.
 
+(click: ?page)[==
 He dials.
 
-Gus Fring picks up on the second ring, like he's been waiting.
+(click: ?page)[==
+Gus Fring picks up on the second ring, like he&#39;s been waiting.
 
-*That's the thing about Walt. He always knows when he's making the wrong choice. He makes it anyway.*
+(click: ?page)[==
+*That&#39;s the thing about Walt. He always knows when he&#39;s making the wrong choice. He makes it anyway.*
 
+(click: ?page)[==
 The operation scales up. The laundry. The superlab. Industrial quantities across three states.
 
+(click: ?page)[==
 Jesse and Jane are safe — they got out, Saul made sure of that.
 
-But Walt is still in it, deeper than ever, and the machine he built doesn't have a reverse gear.
+(click: ?page)[==
+But Walt is still in it, deeper than ever, and the machine he built doesn&#39;t have a reverse gear.
 
+(click: ?page)[==
 Gus dies. The cartel burns. Hank gets close. Then Hank gets too close.
 
-Walt makes choices that can't be unmade. He poisons a child to keep Jesse in line. He watches Hank die. He watches everything collapse anyway.
+(click: ?page)[==
+Walt makes choices that can&#39;t be unmade. He poisons a child to keep Jesse in line. He watches Hank die. He watches everything collapse anyway.
 
+(click: ?page)[==
 He dies in the superlab on a cold night in November. Shot by a machine gun he built, triggered by a key fob. He gets to the floor and touches the equipment on the way down. Cold steel. Clean surfaces.
 
+(click: ?page)[==
 He built something perfect, and it destroyed everything that mattered.
 
+(click: ?page)[==
 Saul ends up in Omaha. Managing a Cinnabon. He wears a different name and watches the door.
 
+(click: ?page)[==
 He thinks about Jesse and Jane sometimes. Hopes they made it somewhere good.
 
+(click: ?page)[==
 He never finds out.
 
 ---
 
-*Jesse and Jane drove north and didn't look back.*
+(click: ?page)[==
+*Jesse and Jane drove north and didn&#39;t look back.*
 
+(click: ?page)[==
 *Walt chose the empire.*
 
+(click: ?page)[==
 *The empire chose him back.*
 
 ---
 
+(click: ?page)[==
 **[END — BAD PATH]**
 
 
 &lt;!-- ============================================================
+(click: ?page)[==
      CUTSCENE PLACEMENT NOTES
+(click: ?page)[==
      ============================================================
 
-CUTSCENE 1 — Between "hahahahaha" and "DECISION 1 - The Bag"
-     WHAT: Combo's body. A parking lot at night, crime scene
+(click: ?page)[==
+CUTSCENE 1 — Between &quot;hahahahaha&quot; and &quot;DECISION 1 - The Bag&quot;
+(click: ?page)[==
+     WHAT: Combo&#39;s body. A parking lot at night, crime scene
+(click: ?page)[==
      tape, a cake box crushed on the asphalt. No dialogue.
+(click: ?page)[==
      Just the image. Jesse watching from across the street.
+(click: ?page)[==
      WHY HERE: This is the emotional gut-punch that ends the
+(click: ?page)[==
      carefree opening and makes the scored decisions feel
+(click: ?page)[==
      consequential. The player just watched Jesse joke around
+(click: ?page)[==
      with Combo. Now Combo is gone. The choices that follow
+(click: ?page)[==
      (the bag, the territory, the dinner) are all colored by
+(click: ?page)[==
      this moment.
+(click: ?page)[==
      DURATION: Short. 20-30 seconds max. No player input.
 
-CUTSCENE 2 — Between "Act 1 End" and "ACT 2 Walt"
-     WHAT: A POV shift. Jesse's apartment from outside —
+(click: ?page)[==
+CUTSCENE 2 — Between &quot;Act 1 End&quot; and &quot;ACT 2 Walt&quot;
+(click: ?page)[==
+     WHAT: A POV shift. Jesse&#39;s apartment from outside —
+(click: ?page)[==
      lights on, music muffled. The camera (or image) pulls
+(click: ?page)[==
      back to the Aztek sitting on the curb. Walt inside it.
+(click: ?page)[==
      Just watching.
-     WHY HERE: Transitions from Jesse's perspective to Walt's
-     without explanation. The player sees Walt watching Jesse's
+(click: ?page)[==
+     WHY HERE: Transitions from Jesse&#39;s perspective to Walt&#39;s
+(click: ?page)[==
+     without explanation. The player sees Walt watching Jesse&#39;s
+(click: ?page)[==
      apartment and understands: Walt has been here before. The
+(click: ?page)[==
      act break lands harder.
+(click: ?page)[==
      DURATION: Short. 15-20 seconds. No player input.
 
-CUTSCENE 3 — Between "Don't / Roll her over" and Act 3 Dawn
+(click: ?page)[==
+CUTSCENE 3 — Between &quot;Don&#39;t / Roll her over&quot; and Act 3 Dawn
+(click: ?page)[==
      WHAT: A time lapse. Dawn breaking over Albuquerque.
+(click: ?page)[==
      The strip mall parking lot, empty. Lights coming on
-     one by one. Saul's car pulling in last.
+(click: ?page)[==
+     one by one. Saul&#39;s car pulling in last.
+(click: ?page)[==
      WHY HERE: This is the biggest tonal shift in the game —
-     from Walt's moral crisis to Saul's bureaucratic morning.
-     The visual break signals: we're in a different world now,
+(click: ?page)[==
+     from Walt&#39;s moral crisis to Saul&#39;s bureaucratic morning.
+(click: ?page)[==
+     The visual break signals: we&#39;re in a different world now,
+(click: ?page)[==
      with a different kind of man holding the same disaster.
+(click: ?page)[==
      DURATION: Medium. 30-45 seconds. Can include the Baby
+(click: ?page)[==
      Blue instrumental or ambient city sound.
+(click: ?page)[==
      DURATION: Medium. 30-40 seconds. No player input.
 
+(click: ?page)[==
 NO CUTSCENE between Act 3 decisions — the Saul act moves
+(click: ?page)[==
 fast by design. The strip mall, the motel, the office —
-these are all Saul's world and the momentum should feel
+(click: ?page)[==
+these are all Saul&#39;s world and the momentum should feel
+(click: ?page)[==
 relentless. Let the click-through pacing carry it.
 
+(click: ?page)[==
 ============================================================ --&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!

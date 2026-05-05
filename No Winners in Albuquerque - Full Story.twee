@@ -455,13 +455,7 @@ Why the hell did he have a cake?
 (click: ?page)[==
 Oh, duh… 'cause tomorrow is Ms. Ortega's birthday.
 
-<!-- ★ CUTSCENE 1 marker — see notes at bottom of file ★ -->
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/3.mp4" type="video/mp4"></video>
-</div>
-
-[[— DECISION 1 — The Bag]]
+[[Cutscene 1 — Combo]]
 
 :: — DECISION 1 — The Bag [bb-bg-none] {"position":"700,1525","size":"100,100"}
 Three days after Combo.
@@ -606,11 +600,7 @@ She doesn't say anything either.
 
 
 :: — Act 1 End [bb-bg-none] {"position":"700,2275","size":"100,100"}
-(if: $karma >= 1)[
-  (go-to: "— ACT 2 — Walt — Good Path")
-](else:)[
-  (go-to: "— ACT 2 — Walt — Bad Path")
-]
+(go-to: "Cutscene 2 — Watching")
 
 
 <!-- ============================================================ -->
@@ -770,7 +760,7 @@ He drinks a glass of water in the dark kitchen.
 (click: ?page)[==
 He thinks: tomorrow Saul is going to call.
 
-[[— ACT 3 — Saul — Jane Alive]]
+[[Cutscene 3 — Dawn]]
 
 
 :: Don't [bb-bg-heisenberg] {"position":"825,2575","size":"100,100"}
@@ -803,7 +793,7 @@ He drinks a glass of water in the dark kitchen and stares at his hand on the gla
 (click: ?page)[==
 He thinks: tomorrow Saul is going to call.
 
-[[— ACT 3 — Saul — Jane Dead]]
+[[Cutscene 3 — Dawn]]
 
 
 <!-- ============================================================ -->
@@ -814,10 +804,6 @@ He thinks: tomorrow Saul is going to call.
 
 :: — ACT 3 — Saul — Jane Dead [bb-bg-saul] {"position":"900,2700","size":"100,100"}
 Dawn at the strip mall.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/9.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Saul Goodman — real name James McGill, age undisclosed, height whatever the shoes say — unlocks Saul Goodman and Associates.
@@ -1292,10 +1278,6 @@ Saul closes his practice on a Friday. Drives west. Opens something smaller and q
 :: — ACT 3 — Saul — Jane Alive [bb-bg-saul] {"position":"300,2700","size":"100,100"}
 Dawn at the strip mall.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/9.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 Saul Goodman — real name James McGill, age undisclosed, height whatever the shoes say — unlocks Saul Goodman and Associates.
 
@@ -1660,6 +1642,38 @@ He never finds out.
 
 (click: ?page)[==
 **[END — BAD PATH]**
+
+
+:: Cutscene 1 — Combo [bb-bg-combo] {"position":"700,1450","size":"100,100"}
+<div style="text-align:center; margin:20px 0;">
+  <video controls autoplay preload="metadata" style="width:720px; max-width:95%; height:auto; border:0; border-radius:8px;"><source src="Videos/cut1.mp4" type="video/mp4"></video>
+</div>
+
+[[Continue|— DECISION 1 — The Bag]]
+
+
+:: Cutscene 2 — Watching [bb-bg-walt] {"position":"700,2350","size":"100,100"}
+<div style="text-align:center; margin:20px 0;">
+  <video controls autoplay preload="metadata" style="width:720px; max-width:95%; height:auto; border:0; border-radius:8px;"><source src="Videos/cut2.mp4" type="video/mp4"></video>
+</div>
+
+(if: $karma >= 1)[
+  [[Continue|— ACT 2 — Walt — Good Path]]
+](else:)[
+  [[Continue|— ACT 2 — Walt — Bad Path]]
+]
+
+
+:: Cutscene 3 — Dawn [bb-bg-saul] {"position":"700,2650","size":"100,100"}
+<div style="text-align:center; margin:20px 0;">
+  <video controls autoplay preload="metadata" style="width:720px; max-width:95%; height:auto; border:0; border-radius:8px;"><source src="Videos/cut3.mp4" type="video/mp4"></video>
+</div>
+
+(if: $janeLives is true)[
+  [[Continue|— ACT 3 — Saul — Jane Alive]]
+](else:)[
+  [[Continue|— ACT 3 — Saul — Jane Dead]]
+]
 
 
 <!-- ============================================================

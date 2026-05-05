@@ -526,7 +526,7 @@ Oh, duh… &#39;cause tomorrow is Ms. Ortega&#39;s birthday.
   &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/3.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
 &lt;/div&gt;
 
-[[— DECISION 1 — The Bag]]</tw-passagedata><tw-passagedata pid="13" name="— DECISION 1 — The Bag" tags="bb-bg-jesse" position="700,1525" size="100,100">Three days after Combo.
+[[Cutscene 1 — Combo]]</tw-passagedata><tw-passagedata pid="13" name="— DECISION 1 — The Bag" tags="bb-bg-jesse" position="700,1525" size="100,100">Three days after Combo.
 
 (click: ?page)[==
 Jesse&#39;s apartment. The bag of blue is on the coffee table where he left it. Skinny Pete&#39;s been calling — the Ortega brothers want a sample meet tonight and Jesse is the one who has to show up and look like he has his shit together.
@@ -632,16 +632,7 @@ A week later Jesse finds an old kit under the bathroom sink, tucked behind the c
 (click: ?page)[==
 She doesn&#39;t say anything either.
 
-[[— Act 1 End]]</tw-passagedata><tw-passagedata pid="22" name="— Act 1 End" tags="bb-bg-none" position="700,2275" size="100,100">(if: $karma &gt;= 1)[
-  (go-to: &quot;— ACT 2 — Walt — Good Path&quot;)
-](else:)[
-  (go-to: &quot;— ACT 2 — Walt — Bad Path&quot;)
-]
-
-
-&lt;!-- ============================================================ --&gt;
-&lt;!--                       ACT 2 — WALT                          --&gt;
-&lt;!-- ============================================================ --&gt;</tw-passagedata><tw-passagedata pid="23" name="— ACT 2 — Walt — Good Path" tags="bb-bg-walt" position="700,2400" size="100,100">6:15 AM.
+[[— Act 1 End]]</tw-passagedata><tw-passagedata pid="22" name="— Act 1 End" tags="bb-bg-none" position="700,2275" size="100,100">(go-to: &quot;Cutscene 2 — Watching&quot;)</tw-passagedata><tw-passagedata pid="23" name="— ACT 2 — Walt — Good Path" tags="bb-bg-walt" position="700,2400" size="100,100">6:15 AM.
 
 &lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
   &lt;video controls preload=&quot;metadata&quot; style=&quot;width:600px; max-width:90%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/5.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
@@ -785,7 +776,7 @@ He drinks a glass of water in the dark kitchen.
 (click: ?page)[==
 He thinks: tomorrow Saul is going to call.
 
-[[— ACT 3 — Saul — Jane Alive]]</tw-passagedata><tw-passagedata pid="26" name="Don&#39;t" tags="bb-bg-heisenberg" position="825,2575" size="100,100">(set: $janeLives to false)
+[[Cutscene 3 — Dawn]]</tw-passagedata><tw-passagedata pid="26" name="Don&#39;t" tags="bb-bg-heisenberg" position="825,2575" size="100,100">(set: $janeLives to false)
 His hand stops.
 
 (click: ?page)[==
@@ -814,7 +805,7 @@ He drinks a glass of water in the dark kitchen and stares at his hand on the gla
 (click: ?page)[==
 He thinks: tomorrow Saul is going to call.
 
-[[— ACT 3 — Saul — Jane Dead]]
+[[Cutscene 3 — Dawn]]
 
 
 &lt;!-- ============================================================ --&gt;
@@ -1662,7 +1653,30 @@ these are all Saul&#39;s world and the momentum should feel
 relentless. Let the click-through pacing carry it.
 
 (click: ?page)[==
-============================================================ --&gt;</tw-passagedata></tw-storydata>
+============================================================ --&gt;</tw-passagedata><tw-passagedata pid="51" name="Cutscene 1 — Combo" tags="bb-bg-combo" position="700,1450" size="100,100">&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls autoplay preload=&quot;metadata&quot; style=&quot;width:720px; max-width:95%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/cut1.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+&lt;/div&gt;
+
+[[Continue|— DECISION 1 — The Bag]]</tw-passagedata>
+<tw-passagedata pid="52" name="Cutscene 2 — Watching" tags="bb-bg-walt" position="700,2350" size="100,100">&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls autoplay preload=&quot;metadata&quot; style=&quot;width:720px; max-width:95%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/cut2.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+&lt;/div&gt;
+
+(if: $karma &gt;= 1)[
+  [[Continue|— ACT 2 — Walt — Good Path]]
+](else:)[
+  [[Continue|— ACT 2 — Walt — Bad Path]]
+]</tw-passagedata>
+<tw-passagedata pid="53" name="Cutscene 3 — Dawn" tags="bb-bg-saul" position="700,2650" size="100,100">&lt;div style=&quot;text-align:center; margin:20px 0;&quot;&gt;
+  &lt;video controls autoplay preload=&quot;metadata&quot; style=&quot;width:720px; max-width:95%; height:auto; border:0; border-radius:8px;&quot;&gt;&lt;source src=&quot;Videos/cut3.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;
+&lt;/div&gt;
+
+(if: $janeLives is true)[
+  [[Continue|— ACT 3 — Saul — Jane Alive]]
+](else:)[
+  [[Continue|— ACT 3 — Saul — Jane Dead]]
+]</tw-passagedata>
+</tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

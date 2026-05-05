@@ -111,7 +111,7 @@ tw-story[data-bb-bg="pete"] {
 
 :: Intro [bb-bg-none] {"position":"700,300","size":"100,100"}
 <div style="text-align:center; margin:0; padding:0;">
-<video id="bb-intro" autoplay preload="metadata" style="width:100%; max-width:900px; height:auto; display:block; margin:0 auto; border:0;"><source src="Videos/BB.mov" type="video/quicktime"><source src="Videos/BB.mov" type="video/mp4"></video>
+<video id="bb-intro" autoplay preload="metadata" style="width:100%; max-width:900px; height:auto; display:block; margin:0 auto; border:0;"><source src="Videos/BB.mp4" type="video/quicktime"><source src="Videos/BB.mp4" type="video/mp4"></video>
 </div>
 <div id="intro-btn" style="display:none; text-align:center; margin-top:1.5em;">
 [[Begin|other passage]]

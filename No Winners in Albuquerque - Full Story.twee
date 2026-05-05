@@ -1,7 +1,6 @@
 :: StoryTitle
 No Winners in Albuquerque
 
-
 :: StoryData
 {
   "ifid": "51BBD6BA-779F-4FC2-8737-811006510819",
@@ -11,11 +10,9 @@ No Winners in Albuquerque
   "zoom": 1
 }
 
-
 :: StoryInit
 (set: $karma to 0)
 (set: $janeLives to false)
-
 
 :: Story Stylesheet
 tw-story {
@@ -72,7 +69,6 @@ tw-story[data-bb-bg="pete"] {
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Skinny%20Pete.jpg");
 }
 
-
 :: Story JavaScript
 (function () {
 	function syncCharacterBg() {
@@ -113,7 +109,6 @@ tw-story[data-bb-bg="pete"] {
 	}
 })();
 
-
 <!-- ============================================================ -->
 <!--                        ACT 1 — JESSE                        -->
 <!-- ============================================================ -->
@@ -136,12 +131,10 @@ All this, and it's time to get up for the day.
 [[Light a joint]]
 [[Not right now]]
 
-
 :: Light a joint [bb-bg-jesse] {"position":"775,525","size":"100,100"}
 Nothing like that morning joint.
 
 [[Is Jane up?]]
-
 
 :: Not right now [bb-bg-jesse] {"position":"600,525","size":"100,100"}
 Not right now?
@@ -153,7 +146,6 @@ That's pretty weird. No matter how shitty the day ends up being, a joint always 
 Once you see the rolls from last night, you kinda realize you weren't really serious about not smoking any. It's been like years since you had to wake up without one.
 
 [[Is Jane up?]]
-
 
 :: Is Jane up? [bb-bg-jane] {"position":"700,650","size":"100,100"}
 Jane stirs and wakes up. She doesn't realize what's happening for a few seconds, but then jolts.
@@ -189,7 +181,6 @@ That's what stopped her last time, and all the other times.
 
 [[I don't think so, haha.]]
 
-
 :: Honestly? [bb-bg-jesse] {"position":"600,775","size":"100,100"}
 "Yeah, I've tried to stop before."
 (click: ?page)[==
@@ -205,9 +196,7 @@ Like you're breaking a rule.
 (click: ?page)[==
 I like this feeling somedays, but somedays it's just another boring thing about my life.
 
-
 [[That time in high school..]]
-
 
 :: I don't think so, haha. [bb-bg-jane] {"position":"750,775","size":"100,100"}
 "I dunno, I mean, I've never really tried to quit smoking. It's fun and I feel like it still gets me really high. Like, it still has that psychological effect."
@@ -235,7 +224,6 @@ She looks at the joint between her fingers.
 She takes a few puffs, makes a grimace, and then gets up.
 
 [[Anyway...]]
-
 
 :: That time in high school.. [bb-bg-jesse] {"position":"600,925","size":"100,100"}
 <audio controls autoplay loop>
@@ -303,7 +291,6 @@ You know, I didn't give the box to my mom.
 I traded it for an ounce of weed.
 [[Anyway...]]
 
-
 :: Anyway... [bb-bg-jesse] {"position":"700,1050","size":"100,100"}
 "Yknow, just put the joint out."
 
@@ -318,13 +305,8 @@ You realize you gotta meet up with Mr. White.
 
 [[Go meet up with Mr. White]]
 
-
 :: Go meet up with Mr. White [bb-bg-jesse] {"position":"500,1200","size":"100,100"}
 Albuquerque morning already feels too bright.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/1.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Everything looks bleached out.
@@ -337,13 +319,7 @@ Normally someone shouting your last name out here means you're about to get popp
 (click: ?page)[==
 Combo is standing half out the window of his car, grinning like an idiot.
 
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/2.mp4" type="video/mp4"></video>
-</div>
-
 [[Is that a cake box?]]
-
 
 :: Is that a cake box? [bb-bg-combo] {"position":"675,1250","size":"100,100"}
 "Are you carrying any scante right now? You're supposed to be working!"
@@ -403,7 +379,6 @@ Combo points at you.
 "See you later homes, we gotta hit the club sometime. Unless that Jane ho keepin you home haha"
 
 [[hahahahaha]]
-
 
 :: hahahahaha [bb-bg-none] {"position":"700,1375","size":"100,100"}
 "Hey, whatever, man."
@@ -472,7 +447,6 @@ The bag just sits there. It doesn't do anything. It doesn't have to.
 [[Use it — KP -2]]
 [[Leave it — KP +2]]
 
-
 :: Use it — KP -2 [bb-bg-none] {"position":"575,1650","size":"100,100"}
 (set: $karma to $karma - 2)
 You open the bag.
@@ -486,7 +460,6 @@ When he gets home Jane is already asleep. He stands in the doorway and watches h
 She doesn't know. And he isn't going to tell her.
 
 [[— DECISION 2 — The Territory Call]]
-
 
 :: Leave it — KP +2 [bb-bg-none] {"position":"825,1650","size":"100,100"}
 (set: $karma to $karma + 2)
@@ -502,20 +475,14 @@ She can tell something's different. She doesn't ask what.
 
 [[— DECISION 2 — The Territory Call]]
 
-
 :: — DECISION 2 — The Territory Call [bb-bg-none] {"position":"700,1775","size":"100,100"}
 A parking lot, late. Jesse, Skinny Pete, and Badger count cash on the hood of Pete's car.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/4.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Pete tells Jesse that Mr. White wants to push into Salamanca territory. They all look at Jesse — he's the one with the Walt connection. If this goes sideways it goes sideways on all of them.
 
 [[Back Walt's Plan — KP -2]]
 [[Push Back — KP +2]]
-
 
 :: Back Walt's Plan — KP -2 [bb-bg-none] {"position":"575,1900","size":"100,100"}
 (set: $karma to $karma - 2)
@@ -534,7 +501,6 @@ He almost believes it.
 
 [[— DECISION 3 — The Dinner]]
 
-
 :: Push Back — KP +2 [bb-bg-none] {"position":"825,1900","size":"100,100"}
 (set: $karma to $karma + 2)
 "I'll talk to Walt. We keep it small or I'm out."
@@ -552,7 +518,6 @@ Something has started to shift.
 
 [[— DECISION 3 — The Dinner]]
 
-
 :: — DECISION 3 — The Dinner [bb-bg-none] {"position":"700,2025","size":"100,100"}
 Two weeks later. Jane's apartment, early Sunday.
 
@@ -564,7 +529,6 @@ Jane isn't pressuring him. She's just asking. She looks at him the way she alway
 
 [["I'll be there." — KP +3]]
 [["I can't. I got stuff with Walt." — KP -3]]
-
 
 :: "I'll be there." — KP +3 [bb-bg-donald] {"position":"825,2150","size":"100,100"}
 (set: $karma to $karma + 3)
@@ -583,7 +547,6 @@ Jesse doesn't say anything. But he keeps the window up so she can't see him smil
 
 [[— Act 1 End]]
 
-
 :: "I can't. I got stuff with Walt." — KP -3 [bb-bg-jesse] {"position":"575,2150","size":"100,100"}
 (set: $karma to $karma - 3)
 Jane stops talking about her dad after that.
@@ -598,10 +561,8 @@ She doesn't say anything either.
 
 [[— Act 1 End]]
 
-
 :: — Act 1 End [bb-bg-none] {"position":"700,2275","size":"100,100"}
 (go-to: "Cutscene 2 — Watching")
-
 
 <!-- ============================================================ -->
 <!--                       ACT 2 — WALT                          -->
@@ -609,10 +570,6 @@ She doesn't say anything either.
 
 :: — ACT 2 — Walt — Good Path [bb-bg-walt] {"position":"700,2400","size":"100,100"}
 6:15 AM.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/5.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Walter Hartwell White catalogs his body the way he catalogs everything — systematically, without sentiment. Left knee. The nausea that hasn't arrived yet but will. The particular quality of the morning light that he has started to associate with the first hour of chemo weeks.
@@ -630,10 +587,6 @@ The difference between those two things is what he can't look at directly.
 (click: ?page)[==
 After fifth period his phone buzzes. Jesse. Crying, or close enough.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/7.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 Combo is dead. Shot on a corner. Had product on him.
 
@@ -648,15 +601,8 @@ He drives to Jesse's apartment after dark.
 (click: ?page)[==
 He sits in the Aztek on the curb for eleven minutes. He tells himself he's deciding what to say. He isn't. He's stalling. He has been stalling since the moment he agreed to cook in an RV in the desert and called it a plan.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/6.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 He goes in. Door unlocked.
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/8.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Jesse is on the bed. Jane is beside him, both on their backs, both breathing.
@@ -673,13 +619,8 @@ His hand reaches out.
 [[Roll her over]]
 [[Don't]]
 
-
 :: — ACT 2 — Walt — Bad Path [bb-bg-heisenberg] {"position":"1000,2400","size":"100,100"}
 6:15 AM.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/5.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Walt catalogs his body: left knee, morning nausea pending, chemo fatigue sitting in his shoulders like wet sand. Skyler's side of the bed empty. Flynn gone early.
@@ -692,25 +633,14 @@ He drives to school. Watches a kid cross at a red light. The thought arrives and
 (click: ?page)[==
 Jesse calls after fifth period. Crying. Combo is dead. Walt tells him to stay put and hangs up and spends the rest of the day being very good at chemistry in front of twenty-three teenagers.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/7.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 He drives to Jesse's apartment after dark. Sits in the Aztek on the curb.
 
 (click: ?page)[==
 He tells himself he's thinking about what to say. He isn't. He's thinking about Jane. About the fact that she knows too much. About the fact that Jesse won't let go of her on his own.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/6.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 He goes in. Door unlocked.
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/8.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Jesse is on the bed. Jane is beside him.
@@ -726,7 +656,6 @@ His hand reaches out.
 
 [[Roll her over]]
 [[Don't]]
-
 
 :: Roll her over [bb-bg-walt] {"position":"575,2575","size":"100,100"}
 (set: $janeLives to true)
@@ -762,7 +691,6 @@ He thinks: tomorrow Saul is going to call.
 
 [[Cutscene 3 — Dawn]]
 
-
 :: Don't [bb-bg-heisenberg] {"position":"825,2575","size":"100,100"}
 (set: $janeLives to false)
 His hand stops.
@@ -794,7 +722,6 @@ He drinks a glass of water in the dark kitchen and stares at his hand on the gla
 He thinks: tomorrow Saul is going to call.
 
 [[Cutscene 3 — Dawn]]
-
 
 <!-- ============================================================ -->
 <!--                      ACT 3 — SAUL                           -->
@@ -831,7 +758,6 @@ He stares at both names for a long time.
 [[Call Heisenberg - Jane Dead]]
 [[Call the Kid First - Jane Dead]]
 
-
 :: Call the Kid First - Jane Dead [bb-bg-saul] {"position":"750,2850","size":"100,100"}
 Voicemail. Of course.
 
@@ -864,7 +790,6 @@ He hangs up. Calls Mike.
 
 [[The Mike Call - Jane Dead]]
 
-
 :: Call Heisenberg - Jane Dead [bb-bg-saul] {"position":"1050,2850","size":"100,100"}
 Walt picks up on the first ring.
 
@@ -887,7 +812,6 @@ He hangs up and tries the Kid.
 Voicemail. He leaves a message. Calls Mike.
 
 [[The Mike Call - Jane Dead]]
-
 
 :: The Mike Call - Jane Dead [bb-bg-mike] {"position":"900,3000","size":"100,100"}
 Thirty seconds flat.
@@ -916,10 +840,6 @@ Mike hangs up. Saul realizes his hand is shaking on the receiver.
 (click: ?page)[==
 He didn't think Mike would. But he had to say it. That small moment — the fact that he had to say it — is the first crack this morning.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/10.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 Hours pass. Saul doesn't leave the office.
 
@@ -930,7 +850,6 @@ He watches the Statue of Liberty inflate and deflate through the window. He thin
 The burner rings. It's the Kid.
 
 [[Jesse Calls - Jane Dead]]
-
 
 :: Jesse Calls - Jane Dead [bb-bg-jesse] {"position":"900,3150","size":"100,100"}
 Jesse is crying so hard Saul can't understand him for thirty seconds.
@@ -954,7 +873,6 @@ Saul sits in the car outside the motel for four minutes before going in.
 He tells himself he's thinking about what to say. He isn't. He's been stalling his whole career.
 
 [[The Motel Room - Jane Dead]]
-
 
 :: The Motel Room - Jane Dead [bb-bg-saul] {"position":"900,3300","size":"100,100"}
 Jesse is sitting on the edge of the bed with his hands clasped between his knees.
@@ -989,7 +907,6 @@ Or he can let Jesse carry it. Easier. Cleaner. Better for the retainer.
 [[Let Jesse Believe It - Jane Dead]]
 [[Tell Jesse the Truth - Jane Dead]]
 
-
 :: Let Jesse Believe It - Jane Dead [bb-bg-saul] {"position":"700,3475","size":"100,100"}
 "Addicts die, Jesse. It's what happens. She rolled the wrong way. You couldn't have known. You couldn't have stopped it."
 
@@ -1016,7 +933,6 @@ He gets in the car.
 
 [[Saul's Decision - Bad Path]]
 
-
 :: Saul's Decision - Bad Path [bb-bg-saul] {"position":"700,3625","size":"100,100"}
 Three days later, Walt calls.
 
@@ -1028,7 +944,6 @@ Gus Fring. Industrial scale. The kind of operation where there's no walking back
 
 [[Broker the Gus Deal - Bad Ending]]
 [[Warn Jesse Instead - Bad Ending]]
-
 
 :: Broker the Gus Deal - Bad Ending [bb-bg-none] {"position":"550,3775","size":"100,100"}
 Saul makes the introduction.
@@ -1044,10 +959,6 @@ Jesse doesn't get out.
 
 (click: ?page)[==
 Jack's men find him. Put him in a hole. Make him cook. He cooks the best meth in the country in a cage with a chain around his ankle and a photo of Andrea and Brock on the wall that he isn't allowed to touch.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/11.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 He doesn't sleep. He stops being Jesse Pinkman and becomes something smaller that has no name.
@@ -1084,7 +995,6 @@ The thing he didn't say.
 (click: ?page)[==
 **[END — BAD PATH]**
 
-
 :: Warn Jesse Instead - Bad Ending [bb-bg-none] {"position":"850,3775","size":"100,100"}
 Saul calls Jesse before Walt.
 
@@ -1102,10 +1012,6 @@ He's already too deep — in the money, in the guilt, in the grief of Jane that 
 
 (click: ?page)[==
 Jack Welker's crew finds him. They put him in a hole.
-
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/11.mp4" type="video/mp4"></video>
-</div>
 
 (click: ?page)[==
 Walt dies in the lab. Saul ends up in Omaha.
@@ -1128,7 +1034,6 @@ He never called back.
 
 (click: ?page)[==
 **[END — BAD PATH]**
-
 
 :: Tell Jesse the Truth - Jane Dead [bb-bg-saul] {"position":"1100,3475","size":"100,100"}
 Saul opens his mouth.
@@ -1175,7 +1080,6 @@ Jesse stares at the wall. His jaw is tight. His hands are shaking.
 [[Get Jesse Out - Good Ending]]
 [[Leave Jesse to His Choices - Bad Ending]]
 
-
 :: Leave Jesse to His Choices - Bad Ending [bb-bg-none] {"position":"950,3650","size":"100,100"}
 Saul doesn't push.
 
@@ -1190,10 +1094,6 @@ He doesn't.
 (click: ?page)[==
 Jack Welker's crew finds him eventually. Same cage. Same chain. Same photo on the wall.
 
-<div style="text-align:center; margin:20px 0;">
-  <video controls preload="metadata" style="width:600px; max-width:90%; height:auto; border:0; border-radius:8px;"><source src="Videos/11.mp4" type="video/mp4"></video>
-</div>
-
 (click: ?page)[==
 Walt dies in the lab. Saul ends up in Omaha.
 
@@ -1206,7 +1106,6 @@ Walt dies in the lab. Saul ends up in Omaha.
 
 (click: ?page)[==
 **[END — BAD PATH]**
-
 
 :: Get Jesse Out - Good Ending [bb-bg-none] {"position":"1100,3650","size":"100,100"}
 "I know a guy. Not the rehab kind. The disappearing kind. New name, new state. You drive north and you don't come back."
@@ -1272,7 +1171,6 @@ Saul closes his practice on a Friday. Drives west. Opens something smaller and q
 (click: ?page)[==
 **[END — GOOD PATH]**
 
-
 <!-- ============================================================ -->
 
 :: — ACT 3 — Saul — Jane Alive [bb-bg-saul] {"position":"300,2700","size":"100,100"}
@@ -1300,7 +1198,6 @@ The way Walt said *fine* told Saul everything.
 The burner rings. It's the Kid.
 
 [[Jesse Calls - Jane Alive]]
-
 
 :: Jesse Calls - Jane Alive [bb-bg-jesse] {"position":"300,2875","size":"100,100"}
 "Yo, it's me."
@@ -1334,7 +1231,6 @@ After all the inches Walt has been sliding in one direction, he stopped at the l
 
 [[The Office Meeting - Jane Alive]]
 
-
 :: The Office Meeting - Jane Alive [bb-bg-saul] {"position":"300,3050","size":"100,100"}
 Jesse and Jane come in looking like they haven't slept.
 
@@ -1356,7 +1252,6 @@ Jesse asks: *What about Mr. White?*
 [[Tell Jesse Walt Saved Jane - Jane Alive]]
 [[Don't Tell Jesse - Jane Alive]]
 
-
 :: Don't Tell Jesse - Jane Alive [bb-bg-saul] {"position":"150,3225","size":"100,100"}
 "Walt's not your problem anymore. He made his choices. You make yours."
 
@@ -1373,7 +1268,6 @@ Jane squeezes his hand.
 Saul starts making calls.
 
 [[Planning the Exit - Jane Alive]]
-
 
 :: Tell Jesse Walt Saved Jane - Jane Alive [bb-bg-saul] {"position":"450,3225","size":"100,100"}
 "He was there. In your apartment. He saw what was happening and he — he rolled her over."
@@ -1404,7 +1298,6 @@ Jane is very still. "What happens to him?"
 
 [[Planning the Exit - Jane Alive]]
 
-
 :: Planning the Exit - Jane Alive [bb-bg-saul] {"position":"300,3400","size":"100,100"}
 The problem is Walt.
 
@@ -1422,7 +1315,6 @@ Jesse looks at the door like it's the last door he ever wants to walk through.
 
 [[Jesse Confronts Walt Directly - Jane Alive]]
 [[Jesse Sends Walt a Message Through Saul - Jane Alive]]
-
 
 :: Jesse Sends Walt a Message Through Saul - Jane Alive [bb-bg-jesse] {"position":"150,3575","size":"100,100"}
 Saul calls Walt.
@@ -1452,7 +1344,6 @@ Not forgiveness. Not resolution. Just Walt saying okay and hanging up.
 But it's enough.
 
 [[Walt's Choice - Jane Alive]]
-
 
 :: Jesse Confronts Walt Directly - Jane Alive [bb-bg-jesse] {"position":"450,3575","size":"100,100"}
 Jesse drives to Walt's house early. Walt answers the door in his robe.
@@ -1486,7 +1377,6 @@ Jesse stands on the porch for a moment. Then he walks to his car and drives away
 
 [[Walt's Choice - Jane Alive]]
 
-
 :: Walt's Choice - Jane Alive [bb-bg-walt] {"position":"300,3750","size":"100,100"}
 Walt sits at the kitchen table for three hours.
 
@@ -1507,7 +1397,6 @@ He thinks about what happens if he makes it.
 
 [[Walt Walks Away - Good Ending]]
 [[Walt Makes the Call - Bad Ending]]
-
 
 :: Walt Walks Away - Good Ending [bb-bg-walt] {"position":"150,3925","size":"100,100"}
 Walt doesn't make the call.
@@ -1584,7 +1473,6 @@ He learned to build furniture. He was good at it. The kind of good that comes fr
 (click: ?page)[==
 **[END — GOOD PATH, ALL THREE]**
 
-
 :: Walt Makes the Call - Bad Ending [bb-bg-heisenberg] {"position":"450,3925","size":"100,100"}
 Walt picks up the phone.
 
@@ -1643,19 +1531,11 @@ He never finds out.
 (click: ?page)[==
 **[END — BAD PATH]**
 
-
 :: Cutscene 1 — Combo [bb-bg-combo] {"position":"700,1450","size":"100,100"}
-<div style="text-align:center; margin:20px 0;">
-  <video controls autoplay preload="metadata" style="width:720px; max-width:95%; height:auto; border:0; border-radius:8px;"><source src="Videos/cut1.mp4" type="video/mp4"></video>
-</div>
 
 [[Continue|— DECISION 1 — The Bag]]
 
-
 :: Cutscene 2 — Watching [bb-bg-walt] {"position":"700,2350","size":"100,100"}
-<div style="text-align:center; margin:20px 0;">
-  <video controls autoplay preload="metadata" style="width:720px; max-width:95%; height:auto; border:0; border-radius:8px;"><source src="Videos/cut2.mp4" type="video/mp4"></video>
-</div>
 
 (if: $karma >= 1)[
   [[Continue|— ACT 2 — Walt — Good Path]]
@@ -1663,18 +1543,13 @@ He never finds out.
   [[Continue|— ACT 2 — Walt — Bad Path]]
 ]
 
-
 :: Cutscene 3 — Dawn [bb-bg-saul] {"position":"700,2650","size":"100,100"}
-<div style="text-align:center; margin:20px 0;">
-  <video controls autoplay preload="metadata" style="width:720px; max-width:95%; height:auto; border:0; border-radius:8px;"><source src="Videos/cut3.mp4" type="video/mp4"></video>
-</div>
 
 (if: $janeLives is true)[
   [[Continue|— ACT 3 — Saul — Jane Alive]]
 ](else:)[
   [[Continue|— ACT 3 — Saul — Jane Dead]]
 ]
-
 
 <!-- ============================================================
 (click: ?page)[==

@@ -6,7 +6,7 @@ No Winners in Albuquerque
   "ifid": "51BBD6BA-779F-4FC2-8737-811006510819",
   "format": "Harlowe",
   "format-version": "3.3.9",
-  "start": "other passage",
+  "start": "Intro",
   "zoom": 1
 }
 
@@ -108,6 +108,16 @@ tw-story[data-bb-bg="pete"] {
 		init();
 	}
 })();
+
+:: Intro [bb-bg-none] {"position":"700,300","size":"100,100"}
+<div style="text-align:center; margin:0; padding:0;">
+<video id="bb-intro" autoplay preload="metadata" style="width:100%; max-width:900px; height:auto; display:block; margin:0 auto; border:0;"><source src="Videos/BB.mov" type="video/quicktime"><source src="Videos/BB.mov" type="video/mp4"></video>
+</div>
+<div id="intro-btn" style="display:none; text-align:center; margin-top:1.5em;">
+[[Begin|other passage]]
+</div>
+<script>var v=document.getElementById("bb-intro");if(v){v.onended=function(){document.getElementById("intro-btn").style.display="block";}}</script>
+
 
 <!-- ============================================================ -->
 <!--                        ACT 1 — JESSE                        -->
@@ -995,6 +1005,10 @@ The thing he didn't say.
 (click: ?page)[==
 **[END — BAD PATH]**
 
+<div style="text-align:center; margin-top:2em;">
+(link-rerun: "Play Again")[(restart:)]
+</div>
+
 :: Warn Jesse Instead - Bad Ending [bb-bg-none] {"position":"850,3775","size":"100,100"}
 Saul calls Jesse before Walt.
 
@@ -1034,6 +1048,10 @@ He never called back.
 
 (click: ?page)[==
 **[END — BAD PATH]**
+
+<div style="text-align:center; margin-top:2em;">
+(link-rerun: "Play Again")[(restart:)]
+</div>
 
 :: Tell Jesse the Truth - Jane Dead [bb-bg-saul] {"position":"1100,3475","size":"100,100"}
 Saul opens his mouth.
@@ -1107,6 +1125,10 @@ Walt dies in the lab. Saul ends up in Omaha.
 (click: ?page)[==
 **[END — BAD PATH]**
 
+<div style="text-align:center; margin-top:2em;">
+(link-rerun: "Play Again")[(restart:)]
+</div>
+
 :: Get Jesse Out - Good Ending [bb-bg-none] {"position":"1100,3650","size":"100,100"}
 "I know a guy. Not the rehab kind. The disappearing kind. New name, new state. You drive north and you don't come back."
 
@@ -1170,6 +1192,10 @@ Saul closes his practice on a Friday. Drives west. Opens something smaller and q
 
 (click: ?page)[==
 **[END — GOOD PATH]**
+
+<div style="text-align:center; margin-top:2em;">
+(link-rerun: "Play Again")[(restart:)]
+</div>
 
 <!-- ============================================================ -->
 
@@ -1473,6 +1499,10 @@ He learned to build furniture. He was good at it. The kind of good that comes fr
 (click: ?page)[==
 **[END — GOOD PATH, ALL THREE]**
 
+<div style="text-align:center; margin-top:2em;">
+(link-rerun: "Play Again")[(restart:)]
+</div>
+
 :: Walt Makes the Call - Bad Ending [bb-bg-heisenberg] {"position":"450,3925","size":"100,100"}
 Walt picks up the phone.
 
@@ -1530,6 +1560,10 @@ He never finds out.
 
 (click: ?page)[==
 **[END — BAD PATH]**
+
+<div style="text-align:center; margin-top:2em;">
+(link-rerun: "Play Again")[(restart:)]
+</div>
 
 :: Cutscene 1 — Combo [bb-bg-combo] {"position":"700,1450","size":"100,100"}
 

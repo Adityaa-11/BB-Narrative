@@ -75,10 +75,10 @@ tw-story[data-bb-bg="pete"] {
   function showIntro(){
     var overlay=document.createElement('div');
     overlay.id='bb-intro-overlay';
-    overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;';
+    overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;';
     var vid=document.createElement('video');
     vid.src='Videos/BB.mp4';
-    vid.style.cssText='max-width:100%;max-height:80vh;display:block;';
+    vid.style.cssText='width:100%;max-width:100%;height:100vh;max-height:100vh;display:block;object-fit:contain;';
     vid.controls=true;
     vid.playsInline=true;
     var btn=document.createElement('button');

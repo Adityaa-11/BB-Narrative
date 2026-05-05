@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play No Winners in Albuquerque.</tw-noscript></noscript></tw-story>
-<tw-storydata name="No Winners in Albuquerque" startnode="54" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="51BBD6BA-779F-4FC2-8737-811006510819" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html,
+<tw-storydata name="No Winners in Albuquerque" startnode="2" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="51BBD6BA-779F-4FC2-8737-811006510819" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html,
 body {
 	min-height: 100%;
 	background: #000;
@@ -97,7 +97,58 @@ tw-story[data-bb-bg="donald"]::before {
 
 tw-story[data-bb-bg="pete"]::before {
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.88) 100%), url("Images/Skinny%20Pete.jpg");
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">(function () {
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* ── INTRO VIDEO OVERLAY ── */
+(function(){
+  function showIntro(){
+    var overlay=document.createElement('div');
+    overlay.id='bb-intro-overlay';
+    overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;';
+
+    var vid=document.createElement('video');
+    vid.src='Videos/BB.mp4';
+    vid.style.cssText='max-width:100%;max-height:80vh;display:block;';
+    vid.controls=true;
+    vid.playsInline=true;
+
+    var btn=document.createElement('button');
+    btn.textContent='Begin';
+    btn.style.cssText='margin-top:24px;padding:12px 48px;font-size:1.2em;font-family:Georgia,serif;background:transparent;color:#fff;border:2px solid #fff;cursor:pointer;letter-spacing:0.1em;display:none;';
+    btn.onmouseover=function(){btn.style.background='rgba(255,255,255,0.15)';};
+    btn.onmouseout=function(){btn.style.background='transparent';};
+
+    function revealBtn(){
+      btn.style.display='block';
+    }
+    vid.addEventListener('ended',revealBtn);
+    // Also show button if video fails to load/play
+    vid.addEventListener('error',revealBtn);
+    setTimeout(revealBtn, 30000); // failsafe: always show after 30s
+
+    btn.addEventListener('click',function(){
+      overlay.style.transition='opacity 0.5s';
+      overlay.style.opacity='0';
+      setTimeout(function(){overlay.remove();},500);
+    });
+
+    overlay.appendChild(vid);
+    overlay.appendChild(btn);
+    document.body.appendChild(overlay);
+
+    // Try autoplay; if blocked show button immediately
+    var p=vid.play();
+    if(p&&typeof p.catch==='function'){
+      p.catch(function(){revealBtn();});
+    }
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',showIntro);
+  } else {
+    showIntro();
+  }
+})();
+/* ── END INTRO OVERLAY ── */
+(function () {
 	var scrollTimer = null;
 	var lastCenteredSignature = "";
 
@@ -1629,7 +1680,6 @@ relentless. Let the click-through pacing carry it.
 ](else:)[
   [[Continue|— ACT 3 — Saul — Jane Dead]]
 ]</tw-passagedata>
-<tw-passagedata pid="54" name="Intro" tags="bb-bg-none" position="700,300" size="100,100">&lt;div style=&quot;text-align:center; margin:0; padding:0;&quot;&gt;&lt;video id=&quot;bb-intro&quot; autoplay preload=&quot;metadata&quot; style=&quot;width:100%; max-width:900px; height:auto; display:block; margin:0 auto; border:0;&quot;&gt;&lt;source src=&quot;Videos/BB.mp4&quot; type=&quot;video/quicktime&quot;&gt;&lt;source src=&quot;Videos/BB.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/video&gt;&lt;/div&gt;&lt;div id=&quot;intro-btn&quot; style=&quot;display:none; text-align:center; margin-top:1.5em;&quot;&gt;[[Begin|other passage]]&lt;/div&gt;&lt;script&gt;var v=document.getElementById(&quot;bb-intro&quot;);if(v){v.onended=function(){document.getElementById(&quot;intro-btn&quot;).style.display=&quot;block&quot;;}}&lt;/script&gt;</tw-passagedata>
 </tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
